@@ -1,0 +1,7 @@
+{
+	"name": "AzureFunction584",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/taizawaTest001_group/providers/Microsoft.Web/sites/taizawaTest001",
+		"groupId": "sites"
+	}
+}

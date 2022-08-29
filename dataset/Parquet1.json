@@ -1,0 +1,713 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "output"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Id",
+				"type": "UTF8"
+			},
+			{
+				"name": "IsDeleted",
+				"type": "UTF8"
+			},
+			{
+				"name": "MasterRecordId",
+				"type": "UTF8"
+			},
+			{
+				"name": "AccountId",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastName",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstName",
+				"type": "UTF8"
+			},
+			{
+				"name": "Salutation",
+				"type": "UTF8"
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherStreet",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherCity",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherState",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherPostalCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherCountry",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherLatitude",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherLongitude",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherGeocodeAccuracy",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingStreet",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingCity",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingState",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingPostalCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingCountry",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingLatitude",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingLongitude",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingGeocodeAccuracy",
+				"type": "UTF8"
+			},
+			{
+				"name": "Phone",
+				"type": "UTF8"
+			},
+			{
+				"name": "Fax",
+				"type": "UTF8"
+			},
+			{
+				"name": "MobilePhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "HomePhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "OtherPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "AssistantPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "ReportsToId",
+				"type": "UTF8"
+			},
+			{
+				"name": "Email",
+				"type": "UTF8"
+			},
+			{
+				"name": "Title",
+				"type": "UTF8"
+			},
+			{
+				"name": "Department",
+				"type": "UTF8"
+			},
+			{
+				"name": "AssistantName",
+				"type": "UTF8"
+			},
+			{
+				"name": "LeadSource",
+				"type": "UTF8"
+			},
+			{
+				"name": "Birthdate",
+				"type": "UTF8"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "CurrencyIsoCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "OwnerId",
+				"type": "UTF8"
+			},
+			{
+				"name": "HasOptedOutOfEmail",
+				"type": "UTF8"
+			},
+			{
+				"name": "HasOptedOutOfFax",
+				"type": "UTF8"
+			},
+			{
+				"name": "DoNotCall",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreatedDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreatedById",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastModifiedDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastModifiedById",
+				"type": "UTF8"
+			},
+			{
+				"name": "SystemModstamp",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastActivityDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastCURequestDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastCUUpdateDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastViewedDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastReferencedDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "EmailBouncedReason",
+				"type": "UTF8"
+			},
+			{
+				"name": "EmailBouncedDate",
+				"type": "UTF8"
+			},
+			{
+				"name": "IsEmailBounced",
+				"type": "UTF8"
+			},
+			{
+				"name": "PhotoUrl",
+				"type": "UTF8"
+			},
+			{
+				"name": "Jigsaw",
+				"type": "UTF8"
+			},
+			{
+				"name": "JigsawContactId",
+				"type": "UTF8"
+			},
+			{
+				"name": "IndividualId",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_PersonId__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_SOC__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Sansan_CompanyId__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Sansan_CompanyInfo__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Sansan_PersonId__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Sansan_PersonInfo__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MyDepartmentFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ABC_Evaluation__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ACCOUNT_NAME__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "AREA__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Address__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Building__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "BusinessLine__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ChangeDate__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "City__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Comment__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "DeletedFlg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MyDivisionFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstName_Kana__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "HasOptedOutOfEmail__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MyOperationsDepartmentFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastName_Kana__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailMagazineFlg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailingList__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MobilePhone__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ON_Evaluation__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "OldSystemSeqNo__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "PRG_Evaluation__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "PostalCode__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Prefectures__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "RoleLevel__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "SeminarFlg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "saveFlg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ABC_Evaluation_Remark__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ABC__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ON__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "PRG__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MySectionFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__Needs_Score_Synced__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__Pardot_Last_Scored_At__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__campaign__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__comments__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__conversion_date__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__conversion_object_name__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__conversion_object_type__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__created_date__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__first_activity__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__first_search_term__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__first_search_type__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__first_touch_url__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__grade__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__last_activity__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__notes__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__pardot_hard_bounced__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__score__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__url__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__utm_campaign__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__utm_content__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__utm_medium__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__utm_source__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "pi__utm_term__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "DataSource__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "EventDate__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "InboundInformation1__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "InboundInformation2__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "InboundInformation3__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "InboundOccurrenceDate__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "JoinOrNotJoin__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "LeadOccurrenceDate__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "LeadTypeName__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailDeliveryPermissionFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailDeliveryPermissionGetDate__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "MailDeliveryPermissionGetSource__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "SeminarID__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "SeminorName__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_AutomaticKey__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_LocationTransfeProcessingNum__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_LocationTransferErrMsg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_LocationTransferFlg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_LocationTransferNextProcessingDate__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_PersonId_FK__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_SLC_Difference__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_SLC__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__CI_SOC_FK__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__ConversionTargetFlg__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Sansan_CompanyId_FK__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Sansan_PersonId_FK__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sansan_CI__Tags__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_address_city__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_address_countryCode__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_address_postalCode__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_address_state__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_address_street__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_department__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_email__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_fax__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_firstName__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_lastName__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_mobilePhone__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_organizationName__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_phone__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_person_position__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_sansan_organization_keywords__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_sansan_person_occupations__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_sansan_person_personId__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_sansan_person_positionRank__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "sci_sansan_person_tags__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcludedFromSendingMailCheckStatus__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcludedFromSendingMailCheck__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "InvalidOwnerFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "KyoikuPersonFlag__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "CompanyName__c",
+				"type": "UTF8"
+			},
+			{
+				"name": "Remarks__c",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

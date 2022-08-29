@@ -1,0 +1,21 @@
+{
+	"name": "Sftp1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Sftp",
+		"typeProperties": {
+			"host": "localhost",
+			"port": 22,
+			"skipHostKeyValidation": false,
+			"hostKeyFingerprint": "ssh-rsa 3072 8c:bd:37:22:f2:c9:fa:4a:4c:cf:77:f8:14:34:e3:83",
+			"authenticationType": "Basic",
+			"userName": "administrator",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzN2RjYTVjYi03NDUyLTQ0YmYtYTBhNC00MjMwYTMxY2FmMmEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

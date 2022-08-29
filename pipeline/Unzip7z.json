@@ -1,0 +1,39 @@
+{
+	"name": "Unzip7z",
+	"properties": {
+		"activities": [
+			{
+				"name": "WebHookUnzip7z",
+				"type": "WebHook",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://cd08f1ae-eaa6-4202-991f-5a63f633838a.webhook.jpe.azure-automation.net/webhooks?token=d9B%2bxq4%2f8VVcLQ8j2%2fglH8EK9pksIhdi7OnB0J0nd7E%3d",
+					"method": "POST",
+					"body": {
+						"value": "@json(\n  concat(\n    '{\"connectionName\":\"',\n    variables('varConnectionName'),\n    '\",\"storageAccountKey\":\"',\n    variables('storageAccountKey'),\n    '\"}'\n  )\n)",
+						"type": "Expression"
+					},
+					"timeout": "00:10:00",
+					"reportStatusOnCallBack": false
+				}
+			}
+		],
+		"variables": {
+			"varConnectionName": {
+				"type": "String",
+				"defaultValue": "AzureRunAsConnection"
+			},
+			"storageAccountKey": {
+				"type": "String",
+				"defaultValue": "https://cd08f1ae-eaa6-4202-991f-5a63f633838a.webhook.jpe.azure-automation.net/webhooks?token=d9B%2bxq4%2f8VVcLQ8j2%2fglH8EK9pksIhdi7OnB0J0nd7E%3d"
+			}
+		},
+		"folder": {
+			"name": "ADFTest"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-07-26T05:43:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

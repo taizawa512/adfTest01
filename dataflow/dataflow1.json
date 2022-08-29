@@ -1,0 +1,53 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "regExtractTest_input",
+						"type": "DatasetReference"
+					},
+					"name": "inputCsv"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "regExtractTest_output",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ID as string,",
+				"          NAME as string,",
+				"          CONTENT as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> inputCsv",
+				"inputCsv derive(MAIL = regexExtract(CONTENT, '(\\\\d+)@mitsuichemicals.com', 1),",
+				"          MAIL2 = regexExtract(CONTENT, '([0-9]+)@mitsuichemicals.com', 1),",
+				"          {列1} = regexExtract(CONTENT, '(\\\\d+@mitsuichemicals.com)', 1),",
+				"          {列2} = regexExtract(CONTENT, '([0-9]+@mitsuichemicals\\\\.com)', 1)) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Year as string,",
+				"          MoviesCount as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}

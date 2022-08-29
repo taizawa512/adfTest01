@@ -1,0 +1,24 @@
+{
+	"name": "rerun_test_out2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('out/', utcnow('yyyyMMddHHmmss'))",
+					"type": "Expression"
+				},
+				"fileSystem": "rerun-test"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

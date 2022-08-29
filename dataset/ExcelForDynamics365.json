@@ -1,0 +1,47 @@
+{
+	"name": "ExcelForDynamics365",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "受注",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "20220523_001.xlsx",
+				"container": "dynamics365"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "受注ID",
+				"type": "String"
+			},
+			{
+				"name": "名前",
+				"type": "String"
+			},
+			{
+				"name": "ステータス",
+				"type": "String"
+			},
+			{
+				"name": "合計金額",
+				"type": "String"
+			},
+			{
+				"name": "顧客",
+				"type": "String"
+			},
+			{
+				"name": "電子メール (顧客) (取引先担当者 )",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

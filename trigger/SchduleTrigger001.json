@@ -1,0 +1,30 @@
+{
+	"name": "SchduleTrigger001",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TriggerTest",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"p1": "param1",
+					"p2": "param2",
+					"p3": "param3"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 20,
+				"startTime": "2022-06-07T05:30:00Z",
+				"endTime": "2022-06-07T06:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

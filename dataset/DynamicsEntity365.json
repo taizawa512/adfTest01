@@ -1,0 +1,16 @@
+{
+	"name": "DynamicsEntity365",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dynamics365",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "salesorder"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

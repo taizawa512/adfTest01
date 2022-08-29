@@ -1,0 +1,24 @@
+{
+	"name": "rerun_test_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "out",
+				"fileSystem": "rerun-test"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

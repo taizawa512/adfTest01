@@ -1,0 +1,71 @@
+{
+	"name": "2206270060000972",
+	"properties": {
+		"description": "DataFlowのソースで、完了後にファイルを移動するオプションの挙動を確認。",
+		"activities": [
+			{
+				"name": "2206270060000972",
+				"description": "DataFlowのソースで、完了後にファイルを移動するオプションの挙動を確認。",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "DataFlow_2206270060000972",
+						"type": "DataFlowReference",
+						"parameters": {
+							"azureRootFolder": {
+								"value": "'@{variables('azureRootFolder')}'",
+								"type": "Expression"
+							},
+							"ftpFileName": {
+								"value": "'@{variables('ftpFileName')}'",
+								"type": "Expression"
+							}
+						},
+						"datasetParameters": {
+							"ADLSGen2": {
+								"filePath": {
+									"value": "@{variables('azureRootFolder')}/work",
+									"type": "Expression"
+								},
+								"fileName": {
+									"value": "@variables('ftpFileName')",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"variables": {
+			"azureRootFolder": {
+				"type": "String",
+				"defaultValue": "ETL/AD01"
+			},
+			"ftpFileName": {
+				"type": "String",
+				"defaultValue": "MKI_DMS_RECOVERY"
+			}
+		},
+		"folder": {
+			"name": "ADFTest"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-07-26T05:43:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

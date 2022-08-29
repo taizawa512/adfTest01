@@ -1,0 +1,19 @@
+{
+	"name": "Binary3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage6",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "outputFile.docx",
+				"container": "renametestoutput"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

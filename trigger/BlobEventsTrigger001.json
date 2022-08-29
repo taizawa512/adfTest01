@@ -1,0 +1,30 @@
+{
+	"name": "BlobEventsTrigger001",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TriggerTest",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"p1": "@triggerBody().folderPath",
+					"p2": "@triggerBody().fileName",
+					"p3": "@triggerBody().startTime"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/root/blobs/202206",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/datalakestoragetaizawa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

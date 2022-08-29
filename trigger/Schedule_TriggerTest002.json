@@ -1,0 +1,44 @@
+{
+	"name": "Schedule_TriggerTest002",
+	"properties": {
+		"description": "マイナス値のテスト",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TriggerTest",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"p1": "1",
+					"p2": "2",
+					"p3": "3"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 1,
+				"startTime": "2022-07-15T03:58:00",
+				"endTime": "2022-07-31T23:58:00",
+				"timeZone": "Tokyo Standard Time",
+				"schedule": {
+					"minutes": [
+						5
+					],
+					"hours": [
+						13
+					],
+					"monthDays": [
+						-17,
+						1,
+						-1
+					]
+				}
+			}
+		}
+	}
+}

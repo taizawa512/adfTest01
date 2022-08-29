@@ -1,0 +1,19 @@
+{
+	"name": "Salesforce1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Salesforce",
+		"typeProperties": {
+			"environmentUrl": "https://mskk-taizawa-dev-ed.my.salesforce.com",
+			"username": "aizawax512+api01@gmail.com",
+			"apiVersion": "54.0",
+			"extendedProperties": "ProxyHost=localhost;ProxyPort=3128",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjYmVkYzBkMC03MWYwLTQ0MTQtYWM2Mi0xMGMyZGQ5OGRjNzYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

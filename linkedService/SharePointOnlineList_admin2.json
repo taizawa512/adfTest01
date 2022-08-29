@@ -1,0 +1,18 @@
+{
+	"name": "SharePointOnlineList_admin2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SharePointOnlineList",
+		"typeProperties": {
+			"siteUrl": "https://m365x78964420.sharepoint.com/sites/Test/",
+			"tenantId": "258711a2-7ca6-44f7-b8c8-2e5fb1833f7c",
+			"servicePrincipalId": "bcb3ef6d-233f-4a5f-a65c-736adf68a47e",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhNmUzY2M5MC1mZTc1LTQwMWMtOTA1Ny1mMDIzZGI5MWU0YTUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

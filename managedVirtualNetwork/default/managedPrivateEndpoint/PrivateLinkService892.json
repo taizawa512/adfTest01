@@ -1,0 +1,10 @@
+{
+	"name": "PrivateLinkService892",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/mc_taizawaaksprivate0711_2_taizawaaksprivatecluster0711-2_japaneast/providers/Microsoft.Network/privateLinkServices/pls-a3cf84b5be1564d03a702771f8fcd5d0",
+		"groupId": "",
+		"fqdns": [
+			"lb.private.contoso.com"
+		]
+	}
+}

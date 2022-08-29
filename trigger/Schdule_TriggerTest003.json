@@ -1,0 +1,78 @@
+{
+	"name": "Schdule_TriggerTest003",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TriggerTest",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"p1": "1",
+					"p2": "2",
+					"p3": "3"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 1,
+				"startTime": "2022-07-15T04:02:00Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"minutes": [
+						40
+					],
+					"hours": [
+						10
+					],
+					"monthDays": [
+						-31,
+						-30,
+						-29,
+						-27,
+						-26,
+						-25,
+						-24,
+						-23,
+						-22,
+						-21,
+						-20,
+						-19,
+						-18,
+						-17,
+						-16,
+						-15,
+						-14,
+						-13,
+						-12,
+						-11,
+						-10,
+						-9,
+						-8,
+						-7,
+						-6,
+						-5,
+						-4,
+						-3,
+						-2,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			}
+		}
+	}
+}

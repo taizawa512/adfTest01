@@ -1,0 +1,11 @@
+{
+	"name": "ADLSGen2_datalakestoragetaizawa_MSI",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://datalakestoragetaizawa.dfs.core.windows.net/"
+		}
+	}
+}

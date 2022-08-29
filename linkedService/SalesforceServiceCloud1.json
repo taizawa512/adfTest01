@@ -1,0 +1,24 @@
+{
+	"name": "SalesforceServiceCloud1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"aaa": {
+				"type": "string",
+				"defaultValue": "bbb"
+			}
+		},
+		"annotations": [],
+		"type": "SalesforceServiceCloud",
+		"typeProperties": {
+			"environmentUrl": "https://login.salesforce.com",
+			"username": "testtest",
+			"apiVersion": "52.0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5MzY1MWFlZC1mYWVjLTRlZDAtOTQ5ZS1mZmMyZmIzNmY0MWYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "StorageEventTest",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TriggerTest",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"p1": "@triggerBody().folderPath",
+					"p2": "@triggerBody().fileName",
+					"p3": "test"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/root/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/datalakestoragetaizawa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

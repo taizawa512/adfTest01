@@ -1,0 +1,16 @@
+{
+	"name": "DynamicsEntity365_contact",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dynamics365",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "contact"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

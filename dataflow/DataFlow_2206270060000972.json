@@ -1,0 +1,56 @@
+{
+	"name": "DataFlow_2206270060000972",
+	"properties": {
+		"description": "DataFlowのソースで、完了後にファイルを移動するオプションの挙動を確認。",
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ADLSGen2_csv_in001",
+						"type": "DatasetReference"
+					},
+					"name": "ADLSGen2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ADLSGen2_csv_out001",
+						"type": "DatasetReference"
+					},
+					"name": "ADLSGen2out"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     azureRootFolder as string ('ETL/AD01'),",
+				"     ftpFileName as string ('MKI_DMS_RECOVERY')",
+				"}",
+				"source(output(",
+				"          ID as short,",
+				"          NAME as string,",
+				"          CONTENT as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     moveFiles: [(concatWS('/work/', $azureRootFolder, '')),(concatWS('/', $azureRootFolder, 'backup', toString(fromUTC(currentUTC(), 'Asia/Tokyo'),'yyyyMMddHHmmss'), $ftpFileName))]) ~> ADLSGen2",
+				"ADLSGen2 derive(Test = ID) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['test.csv'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> ADLSGen2out"
+			]
+		}
+	}
+}

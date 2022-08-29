@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_ja0",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "hoge.docx",
+				"fileSystem": "exceloutput"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

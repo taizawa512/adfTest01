@@ -1,0 +1,10 @@
+{
+	"name": "AzureFileStorage222",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa",
+		"groupId": "file",
+		"fqdns": [
+			"storageacctaizawa.file.core.windows.net"
+		]
+	}
+}

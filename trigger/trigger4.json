@@ -1,0 +1,25 @@
+{
+	"name": "trigger4",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "2206030060000373_CSV",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2022-06-29T06:30:00Z",
+				"endTime": "2022-06-30T06:50:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

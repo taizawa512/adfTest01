@@ -1,0 +1,9 @@
+{
+	"name": "ADF-taizawa002",
+	"location": "japaneast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "65c33ad7-2b20-4650-9e3c-bf1ee892a377",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

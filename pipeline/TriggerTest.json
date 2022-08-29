@@ -1,0 +1,55 @@
+{
+	"name": "TriggerTest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://test",
+					"method": "GET",
+					"headers": {
+						"filePath": {
+							"value": "@pipeline().parameters.p1",
+							"type": "Expression"
+						},
+						"fileName": {
+							"value": "@pipeline().parameters.p2",
+							"type": "Expression"
+						},
+						"startTime": {
+							"value": "@pipeline().parameters.p3",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"p1": {
+				"type": "string"
+			},
+			"p2": {
+				"type": "string"
+			},
+			"p3": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "ADFTest"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-07-26T05:43:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
