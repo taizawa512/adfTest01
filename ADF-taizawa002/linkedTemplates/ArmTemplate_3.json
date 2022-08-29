@@ -1,0 +1,1881 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-taizawa002"
+		},
+		"AzureFileStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureFileStorage1'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"Salesforce1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Salesforce1'"
+		},
+		"Salesforce1_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'Salesforce1'"
+		},
+		"SalesforceServiceCloud1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SalesforceServiceCloud1'"
+		},
+		"SalesforceServiceCloud1_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'SalesforceServiceCloud1'"
+		},
+		"SapTable1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SapTable1'"
+		},
+		"Sftp1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp1'"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\SHIR"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "redmond\\taizawa"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://mskk-taizawa-dev-ed.my.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "aizawax512+api01@gmail.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "testtest"
+		},
+		"SapTable1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_systemNumber": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Sftp1_properties_typeProperties_hostKeyFingerprint": {
+			"type": "string",
+			"defaultValue": "ssh-rsa 3072 8c:bd:37:22:f2:c9:fa:4a:4c:cf:77:f8:14:34:e3:83"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "administrator"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Parquet1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "output"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "Id",
+						"type": "UTF8"
+					},
+					{
+						"name": "IsDeleted",
+						"type": "UTF8"
+					},
+					{
+						"name": "MasterRecordId",
+						"type": "UTF8"
+					},
+					{
+						"name": "AccountId",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastName",
+						"type": "UTF8"
+					},
+					{
+						"name": "FirstName",
+						"type": "UTF8"
+					},
+					{
+						"name": "Salutation",
+						"type": "UTF8"
+					},
+					{
+						"name": "Name",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherStreet",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherCity",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherState",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherPostalCode",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherCountry",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherLatitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherLongitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherGeocodeAccuracy",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingStreet",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingCity",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingState",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingPostalCode",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingCountry",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingLatitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingLongitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingGeocodeAccuracy",
+						"type": "UTF8"
+					},
+					{
+						"name": "Phone",
+						"type": "UTF8"
+					},
+					{
+						"name": "Fax",
+						"type": "UTF8"
+					},
+					{
+						"name": "MobilePhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "HomePhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherPhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "AssistantPhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "ReportsToId",
+						"type": "UTF8"
+					},
+					{
+						"name": "Email",
+						"type": "UTF8"
+					},
+					{
+						"name": "Title",
+						"type": "UTF8"
+					},
+					{
+						"name": "Department",
+						"type": "UTF8"
+					},
+					{
+						"name": "AssistantName",
+						"type": "UTF8"
+					},
+					{
+						"name": "LeadSource",
+						"type": "UTF8"
+					},
+					{
+						"name": "Birthdate",
+						"type": "UTF8"
+					},
+					{
+						"name": "Description",
+						"type": "UTF8"
+					},
+					{
+						"name": "CurrencyIsoCode",
+						"type": "UTF8"
+					},
+					{
+						"name": "OwnerId",
+						"type": "UTF8"
+					},
+					{
+						"name": "HasOptedOutOfEmail",
+						"type": "UTF8"
+					},
+					{
+						"name": "HasOptedOutOfFax",
+						"type": "UTF8"
+					},
+					{
+						"name": "DoNotCall",
+						"type": "UTF8"
+					},
+					{
+						"name": "CreatedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "CreatedById",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastModifiedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastModifiedById",
+						"type": "UTF8"
+					},
+					{
+						"name": "SystemModstamp",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastActivityDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastCURequestDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastCUUpdateDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastViewedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastReferencedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "EmailBouncedReason",
+						"type": "UTF8"
+					},
+					{
+						"name": "EmailBouncedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "IsEmailBounced",
+						"type": "UTF8"
+					},
+					{
+						"name": "PhotoUrl",
+						"type": "UTF8"
+					},
+					{
+						"name": "Jigsaw",
+						"type": "UTF8"
+					},
+					{
+						"name": "JigsawContactId",
+						"type": "UTF8"
+					},
+					{
+						"name": "IndividualId",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_PersonId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SOC__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_CompanyId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_CompanyInfo__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_PersonId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_PersonInfo__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MyDepartmentFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ABC_Evaluation__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ACCOUNT_NAME__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "AREA__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Address__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Building__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "BusinessLine__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ChangeDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "City__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Comment__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "DeletedFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MyDivisionFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "FirstName_Kana__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "HasOptedOutOfEmail__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MyOperationsDepartmentFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastName_Kana__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailMagazineFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingList__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MobilePhone__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ON_Evaluation__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "OldSystemSeqNo__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "PRG_Evaluation__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "PostalCode__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Prefectures__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "RoleLevel__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "SeminarFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "saveFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ABC_Evaluation_Remark__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ABC__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ON__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "PRG__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MySectionFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__Needs_Score_Synced__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__Pardot_Last_Scored_At__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__campaign__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__comments__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__conversion_date__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__conversion_object_name__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__conversion_object_type__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__created_date__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_activity__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_search_term__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_search_type__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_touch_url__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__grade__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__last_activity__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__notes__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__pardot_hard_bounced__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__score__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__url__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_campaign__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_content__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_medium__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_source__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_term__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "DataSource__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "EventDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundInformation1__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundInformation2__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundInformation3__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundOccurrenceDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "JoinOrNotJoin__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "LeadOccurrenceDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "LeadTypeName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailDeliveryPermissionFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailDeliveryPermissionGetDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailDeliveryPermissionGetSource__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "SeminarID__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "SeminorName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_AutomaticKey__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransfeProcessingNum__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransferErrMsg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransferFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransferNextProcessingDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_PersonId_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SLC_Difference__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SLC__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SOC_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__ConversionTargetFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_CompanyId_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_PersonId_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Tags__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_city__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_countryCode__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_postalCode__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_state__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_street__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_department__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_email__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_fax__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_firstName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_lastName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_mobilePhone__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_organizationName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_phone__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_position__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_organization_keywords__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_occupations__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_personId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_positionRank__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_tags__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ExcludedFromSendingMailCheckStatus__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ExcludedFromSendingMailCheck__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InvalidOwnerFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "KyoikuPersonFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "CompanyName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Remarks__c",
+						"type": "UTF8"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_0c2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "test",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_0sv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_64o')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage7",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "String"
+					},
+					{
+						"name": "NAME",
+						"type": "String"
+					},
+					{
+						"name": "CONTENT",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_cdf')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_ja0')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "*.docx",
+						"container": "excelinput"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_lsz')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Test.csv",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": false,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_vk4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/StorageAcountBinary')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "excelinput"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/regExtractTest_input')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "azureinfo.csv",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\"",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "String"
+					},
+					{
+						"name": "NAME",
+						"type": "String"
+					},
+					{
+						"name": "CONTENT",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/regExtractTest_output')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Year",
+						"type": "String"
+					},
+					{
+						"name": "MoviesCount",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/rerun_test_in')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "in",
+						"fileSystem": "rerun-test"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "String"
+					},
+					{
+						"name": "NAME",
+						"type": "String"
+					},
+					{
+						"name": "CONTENT",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/rerun_test_out')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "out",
+						"fileSystem": "rerun-test"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/rerun_test_out2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": {
+							"value": "@concat('out/', utcnow('yyyyMMddHHmmss'))",
+							"type": "Expression"
+						},
+						"fileSystem": "rerun-test"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureFileStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureFileStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureFileStorage1_connectionString')]",
+					"fileShare": "filesharetest01",
+					"snapshot": "2022-06-21T00:00:00.471Z"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "FileServer",
+				"typeProperties": {
+					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
+					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('FileServer1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Salesforce1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Salesforce",
+				"typeProperties": {
+					"environmentUrl": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]",
+					"username": "[parameters('Salesforce1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce1_password')]"
+					},
+					"securityToken": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce1_securityToken')]"
+					},
+					"apiVersion": "54.0",
+					"extendedProperties": "ProxyHost=localhost;ProxyPort=3128"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceServiceCloud1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"parameters": {
+					"aaa": {
+						"type": "string",
+						"defaultValue": "bbb"
+					}
+				},
+				"annotations": [],
+				"type": "SalesforceServiceCloud",
+				"typeProperties": {
+					"environmentUrl": "[parameters('SalesforceServiceCloud1_properties_typeProperties_environmentUrl')]",
+					"username": "[parameters('SalesforceServiceCloud1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud1_password')]"
+					},
+					"securityToken": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud1_securityToken')]"
+					},
+					"apiVersion": "52.0"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SapTable1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "てすと",
+				"annotations": [],
+				"type": "SapTable",
+				"typeProperties": {
+					"clientId": "[parameters('SapTable1_properties_typeProperties_clientId')]",
+					"language": "",
+					"sncMode": false,
+					"userName": "[parameters('SapTable1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SapTable1_password')]"
+					},
+					"server": "[parameters('SapTable1_properties_typeProperties_server')]",
+					"systemNumber": "[parameters('SapTable1_properties_typeProperties_systemNumber')]"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sftp1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Sftp1_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": false,
+					"hostKeyFingerprint": "[parameters('Sftp1_properties_typeProperties_hostKeyFingerprint')]",
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

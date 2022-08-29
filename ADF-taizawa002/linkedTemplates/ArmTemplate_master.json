@@ -1,0 +1,770 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-taizawa002"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
+		"AzureBlobStorage5_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage5'"
+		},
+		"AzureBlobStorage6_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage6'"
+		},
+		"AzureBlobStorage7_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage7'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDatabricks_LinkedService_001_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks_LinkedService_001'"
+		},
+		"AzureFileStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureFileStorage1'"
+		},
+		"AzurePostgreSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzurePostgreSql1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+		},
+		"AzureSynapseAnalytics2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+		},
+		"AzureSynapseAnalytics3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics3'"
+		},
+		"CosmosDb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDb1'"
+		},
+		"CosmosDbMongoDbApi1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbMongoDbApi1'"
+		},
+		"Dynamics365_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Dynamics365'"
+		},
+		"FileServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileServer1'"
+		},
+		"Salesforce1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Salesforce1'"
+		},
+		"Salesforce1_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'Salesforce1'"
+		},
+		"SalesforceServiceCloud1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SalesforceServiceCloud1'"
+		},
+		"SalesforceServiceCloud1_securityToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'securityToken' of 'SalesforceServiceCloud1'"
+		},
+		"SapTable1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SapTable1'"
+		},
+		"Sftp1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Sftp1'"
+		},
+		"SharePointOnlineList_admin2_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineList_admin2'"
+		},
+		"SharePointOnlineList_owner02_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineList_owner02'"
+		},
+		"incLoadTaizawa001_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'incLoadTaizawa001'"
+		},
+		"test_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'test'"
+		},
+		"ADLSGen2_datalakestoragetaizawa_MSI_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakestoragetaizawa.dfs.core.windows.net/"
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://storageacctaizawa.blob.core.windows.net"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageacctaizawa.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalakestoragetaizawa2.dfs.core.windows.net"
+		},
+		"CosmosDbMongoDbApi1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "test001"
+		},
+		"Dynamics365_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "tokaneko-ADF-test@DynFTEJPN.onmicrosoft.com"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\SHIR"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "redmond\\taizawa"
+		},
+		"Rest_storageacctaizawa_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageacctaizawa.blob.core.windows.net/"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://mskk-taizawa-dev-ed.my.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "aizawax512+api01@gmail.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "testtest"
+		},
+		"SapTable1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_systemNumber": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Sftp1_properties_typeProperties_hostKeyFingerprint": {
+			"type": "string",
+			"defaultValue": "ssh-rsa 3072 8c:bd:37:22:f2:c9:fa:4a:4c:cf:77:f8:14:34:e3:83"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "administrator"
+		},
+		"SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "bcb3ef6d-233f-4a5f-a65c-736adf68a47e"
+		},
+		"SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "b129a7ab-f323-4f8d-83ef-102d320f3267"
+		},
+		"BlobEventsTrigger001_properties_TriggerTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "@triggerBody().folderPath"
+		},
+		"BlobEventsTrigger001_properties_TriggerTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"BlobEventsTrigger001_properties_TriggerTest_parameters_p3": {
+			"type": "string",
+			"defaultValue": "@triggerBody().startTime"
+		},
+		"BlobEventsTrigger001_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/datalakestoragetaizawa"
+		},
+		"SchduleTrigger001_properties_TriggerTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "param1"
+		},
+		"SchduleTrigger001_properties_TriggerTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "param2"
+		},
+		"SchduleTrigger001_properties_TriggerTest_parameters_p3": {
+			"type": "string",
+			"defaultValue": "param3"
+		},
+		"Schdule_TriggerTest003_properties_TriggerTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "1"
+		},
+		"Schdule_TriggerTest003_properties_TriggerTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "2"
+		},
+		"Schdule_TriggerTest003_properties_TriggerTest_parameters_p3": {
+			"type": "string",
+			"defaultValue": "3"
+		},
+		"Schedule_TriggerTest002_properties_TriggerTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "1"
+		},
+		"Schedule_TriggerTest002_properties_TriggerTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "2"
+		},
+		"Schedule_TriggerTest002_properties_TriggerTest_parameters_p3": {
+			"type": "string",
+			"defaultValue": "3"
+		},
+		"StorageEventTest_properties_TriggerTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "@triggerBody().folderPath"
+		},
+		"StorageEventTest_properties_TriggerTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"StorageEventTest_properties_TriggerTest_parameters_p3": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"StorageEventTest_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/datalakestoragetaizawa"
+		},
+		"trigger2_properties_TriggerTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "@triggerBody().folderPath"
+		},
+		"trigger2_properties_TriggerTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"trigger2_properties_TriggerTest_parameters_p3": {
+			"type": "string",
+			"defaultValue": "@trigger().startTime"
+		},
+		"trigger2_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa"
+		},
+		"trigger3_properties_RenameTest_parameters_p1": {
+			"type": "string",
+			"defaultValue": "@triggerBody().folderPath"
+		},
+		"trigger3_properties_RenameTest_parameters_p2": {
+			"type": "string",
+			"defaultValue": "@triggerBody().fileName"
+		},
+		"trigger3_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa"
+		},
+		"AzureFileStorage222_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa"
+		},
+		"AzureFileStorage222_properties_groupId": {
+			"type": "string",
+			"defaultValue": "file"
+		},
+		"AzureFileStorage222_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"storageacctaizawa.file.core.windows.net"
+			]
+		},
+		"AzureFunction584_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/taizawaTest001_group/providers/Microsoft.Web/sites/taizawaTest001"
+		},
+		"AzureFunction584_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sites"
+		},
+		"AzureSynapseAnalytics284_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Synapse/workspaces/taizawatest001"
+		},
+		"AzureSynapseAnalytics284_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sql"
+		},
+		"AzureSynapseAnalytics284_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"taizawatest001.sql.azuresynapse.net"
+			]
+		},
+		"PrivateLinkService892_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/mc_taizawaaksprivate0711_2_taizawaaksprivatecluster0711-2_japaneast/providers/Microsoft.Network/privateLinkServices/pls-a3cf84b5be1564d03a702771f8fcd5d0"
+		},
+		"PrivateLinkService892_properties_groupId": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"PrivateLinkService892_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"lb.private.contoso.com"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF-taizawa002_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
+					"AzureBlobStorage5_connectionString": {
+						"value": "[parameters('AzureBlobStorage5_connectionString')]"
+					},
+					"AzureBlobStorage6_connectionString": {
+						"value": "[parameters('AzureBlobStorage6_connectionString')]"
+					},
+					"AzureBlobStorage7_connectionString": {
+						"value": "[parameters('AzureBlobStorage7_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureDatabricks_LinkedService_001_accessToken": {
+						"value": "[parameters('AzureDatabricks_LinkedService_001_accessToken')]"
+					},
+					"ADLSGen2_datalakestoragetaizawa_MSI_properties_typeProperties_url": {
+						"value": "[parameters('ADLSGen2_datalakestoragetaizawa_MSI_properties_typeProperties_url')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ADF-taizawa002_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzurePostgreSql1_connectionString": {
+						"value": "[parameters('AzurePostgreSql1_connectionString')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureSynapseAnalytics1_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
+					},
+					"AzureSynapseAnalytics2_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics2_connectionString')]"
+					},
+					"CosmosDb1_connectionString": {
+						"value": "[parameters('CosmosDb1_connectionString')]"
+					},
+					"CosmosDbMongoDbApi1_connectionString": {
+						"value": "[parameters('CosmosDbMongoDbApi1_connectionString')]"
+					},
+					"Dynamics365_password": {
+						"value": "[parameters('Dynamics365_password')]"
+					},
+					"incLoadTaizawa001_connectionString": {
+						"value": "[parameters('incLoadTaizawa001_connectionString')]"
+					},
+					"test_connectionString": {
+						"value": "[parameters('test_connectionString')]"
+					},
+					"CosmosDbMongoDbApi1_properties_typeProperties_database": {
+						"value": "[parameters('CosmosDbMongoDbApi1_properties_typeProperties_database')]"
+					},
+					"Dynamics365_properties_typeProperties_username": {
+						"value": "[parameters('Dynamics365_properties_typeProperties_username')]"
+					},
+					"Rest_storageacctaizawa_properties_typeProperties_url": {
+						"value": "[parameters('Rest_storageacctaizawa_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-taizawa002_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADF-taizawa002_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-taizawa002_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ADF-taizawa002_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureFileStorage1_connectionString": {
+						"value": "[parameters('AzureFileStorage1_connectionString')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"Salesforce1_password": {
+						"value": "[parameters('Salesforce1_password')]"
+					},
+					"Salesforce1_securityToken": {
+						"value": "[parameters('Salesforce1_securityToken')]"
+					},
+					"SalesforceServiceCloud1_password": {
+						"value": "[parameters('SalesforceServiceCloud1_password')]"
+					},
+					"SalesforceServiceCloud1_securityToken": {
+						"value": "[parameters('SalesforceServiceCloud1_securityToken')]"
+					},
+					"SapTable1_password": {
+						"value": "[parameters('SapTable1_password')]"
+					},
+					"Sftp1_password": {
+						"value": "[parameters('Sftp1_password')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
+					},
+					"Salesforce1_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]"
+					},
+					"Salesforce1_properties_typeProperties_username": {
+						"value": "[parameters('Salesforce1_properties_typeProperties_username')]"
+					},
+					"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+						"value": "[parameters('SalesforceServiceCloud1_properties_typeProperties_environmentUrl')]"
+					},
+					"SalesforceServiceCloud1_properties_typeProperties_username": {
+						"value": "[parameters('SalesforceServiceCloud1_properties_typeProperties_username')]"
+					},
+					"SapTable1_properties_typeProperties_clientId": {
+						"value": "[parameters('SapTable1_properties_typeProperties_clientId')]"
+					},
+					"SapTable1_properties_typeProperties_userName": {
+						"value": "[parameters('SapTable1_properties_typeProperties_userName')]"
+					},
+					"SapTable1_properties_typeProperties_server": {
+						"value": "[parameters('SapTable1_properties_typeProperties_server')]"
+					},
+					"SapTable1_properties_typeProperties_systemNumber": {
+						"value": "[parameters('SapTable1_properties_typeProperties_systemNumber')]"
+					},
+					"Sftp1_properties_typeProperties_host": {
+						"value": "[parameters('Sftp1_properties_typeProperties_host')]"
+					},
+					"Sftp1_properties_typeProperties_hostKeyFingerprint": {
+						"value": "[parameters('Sftp1_properties_typeProperties_hostKeyFingerprint')]"
+					},
+					"Sftp1_properties_typeProperties_userName": {
+						"value": "[parameters('Sftp1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-taizawa002_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "ADF-taizawa002_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SharePointOnlineList_admin2_servicePrincipalKey": {
+						"value": "[parameters('SharePointOnlineList_admin2_servicePrincipalKey')]"
+					},
+					"SharePointOnlineList_owner02_servicePrincipalKey": {
+						"value": "[parameters('SharePointOnlineList_owner02_servicePrincipalKey')]"
+					},
+					"SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId')]"
+					},
+					"SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId')]"
+					},
+					"BlobEventsTrigger001_properties_TriggerTest_parameters_p1": {
+						"value": "[parameters('BlobEventsTrigger001_properties_TriggerTest_parameters_p1')]"
+					},
+					"BlobEventsTrigger001_properties_TriggerTest_parameters_p2": {
+						"value": "[parameters('BlobEventsTrigger001_properties_TriggerTest_parameters_p2')]"
+					},
+					"BlobEventsTrigger001_properties_TriggerTest_parameters_p3": {
+						"value": "[parameters('BlobEventsTrigger001_properties_TriggerTest_parameters_p3')]"
+					},
+					"BlobEventsTrigger001_properties_typeProperties_scope": {
+						"value": "[parameters('BlobEventsTrigger001_properties_typeProperties_scope')]"
+					},
+					"SchduleTrigger001_properties_TriggerTest_parameters_p1": {
+						"value": "[parameters('SchduleTrigger001_properties_TriggerTest_parameters_p1')]"
+					},
+					"SchduleTrigger001_properties_TriggerTest_parameters_p2": {
+						"value": "[parameters('SchduleTrigger001_properties_TriggerTest_parameters_p2')]"
+					},
+					"SchduleTrigger001_properties_TriggerTest_parameters_p3": {
+						"value": "[parameters('SchduleTrigger001_properties_TriggerTest_parameters_p3')]"
+					},
+					"Schedule_TriggerTest002_properties_TriggerTest_parameters_p1": {
+						"value": "[parameters('Schedule_TriggerTest002_properties_TriggerTest_parameters_p1')]"
+					},
+					"Schedule_TriggerTest002_properties_TriggerTest_parameters_p2": {
+						"value": "[parameters('Schedule_TriggerTest002_properties_TriggerTest_parameters_p2')]"
+					},
+					"Schedule_TriggerTest002_properties_TriggerTest_parameters_p3": {
+						"value": "[parameters('Schedule_TriggerTest002_properties_TriggerTest_parameters_p3')]"
+					},
+					"StorageEventTest_properties_TriggerTest_parameters_p1": {
+						"value": "[parameters('StorageEventTest_properties_TriggerTest_parameters_p1')]"
+					},
+					"StorageEventTest_properties_TriggerTest_parameters_p2": {
+						"value": "[parameters('StorageEventTest_properties_TriggerTest_parameters_p2')]"
+					},
+					"StorageEventTest_properties_TriggerTest_parameters_p3": {
+						"value": "[parameters('StorageEventTest_properties_TriggerTest_parameters_p3')]"
+					},
+					"StorageEventTest_properties_typeProperties_scope": {
+						"value": "[parameters('StorageEventTest_properties_typeProperties_scope')]"
+					},
+					"trigger2_properties_TriggerTest_parameters_p1": {
+						"value": "[parameters('trigger2_properties_TriggerTest_parameters_p1')]"
+					},
+					"trigger2_properties_TriggerTest_parameters_p2": {
+						"value": "[parameters('trigger2_properties_TriggerTest_parameters_p2')]"
+					},
+					"trigger2_properties_TriggerTest_parameters_p3": {
+						"value": "[parameters('trigger2_properties_TriggerTest_parameters_p3')]"
+					},
+					"trigger2_properties_typeProperties_scope": {
+						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
+					},
+					"AzureFileStorage222_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureFileStorage222_properties_privateLinkResourceId')]"
+					},
+					"AzureFileStorage222_properties_groupId": {
+						"value": "[parameters('AzureFileStorage222_properties_groupId')]"
+					},
+					"AzureFileStorage222_properties_fqdns": {
+						"value": "[parameters('AzureFileStorage222_properties_fqdns')]"
+					},
+					"AzureFunction584_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureFunction584_properties_privateLinkResourceId')]"
+					},
+					"AzureFunction584_properties_groupId": {
+						"value": "[parameters('AzureFunction584_properties_groupId')]"
+					},
+					"AzureSynapseAnalytics284_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureSynapseAnalytics284_properties_privateLinkResourceId')]"
+					},
+					"AzureSynapseAnalytics284_properties_groupId": {
+						"value": "[parameters('AzureSynapseAnalytics284_properties_groupId')]"
+					},
+					"AzureSynapseAnalytics284_properties_fqdns": {
+						"value": "[parameters('AzureSynapseAnalytics284_properties_fqdns')]"
+					},
+					"PrivateLinkService892_properties_privateLinkResourceId": {
+						"value": "[parameters('PrivateLinkService892_properties_privateLinkResourceId')]"
+					},
+					"PrivateLinkService892_properties_groupId": {
+						"value": "[parameters('PrivateLinkService892_properties_groupId')]"
+					},
+					"PrivateLinkService892_properties_fqdns": {
+						"value": "[parameters('PrivateLinkService892_properties_fqdns')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-taizawa002_ArmTemplate_3')]"
+			]
+		},
+		{
+			"name": "ADF-taizawa002_ArmTemplate_5",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_5.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSynapseAnalytics3_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics3_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-taizawa002_ArmTemplate_4')]"
+			]
+		},
+		{
+			"name": "ADF-taizawa002_ArmTemplate_6",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_6.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Schdule_TriggerTest003_properties_TriggerTest_parameters_p1": {
+						"value": "[parameters('Schdule_TriggerTest003_properties_TriggerTest_parameters_p1')]"
+					},
+					"Schdule_TriggerTest003_properties_TriggerTest_parameters_p2": {
+						"value": "[parameters('Schdule_TriggerTest003_properties_TriggerTest_parameters_p2')]"
+					},
+					"Schdule_TriggerTest003_properties_TriggerTest_parameters_p3": {
+						"value": "[parameters('Schdule_TriggerTest003_properties_TriggerTest_parameters_p3')]"
+					},
+					"trigger3_properties_RenameTest_parameters_p1": {
+						"value": "[parameters('trigger3_properties_RenameTest_parameters_p1')]"
+					},
+					"trigger3_properties_RenameTest_parameters_p2": {
+						"value": "[parameters('trigger3_properties_RenameTest_parameters_p2')]"
+					},
+					"trigger3_properties_typeProperties_scope": {
+						"value": "[parameters('trigger3_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-taizawa002_ArmTemplate_5')]"
+			]
+		}
+	]
+}
