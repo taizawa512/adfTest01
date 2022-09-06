@@ -6,6 +6,7 @@
 		"type": "AzureBlobFS",
 		"typeProperties": {
 			"url": "https://datalakestoragetaizawa.dfs.core.windows.net/"
-		}
+		},
+		"description": "a"
 	}
 }
