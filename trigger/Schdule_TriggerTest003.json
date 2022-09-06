@@ -2,7 +2,7 @@
 	"name": "Schdule_TriggerTest003",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
