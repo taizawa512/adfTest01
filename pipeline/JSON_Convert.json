@@ -99,6 +99,7 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
+							"wildcardFileName": "*.json",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -125,7 +126,7 @@
 									"path": "$['exchange_criteria']"
 								},
 								"sink": {
-									"ordinal": 1
+									"name": "exchange_criteria"
 								}
 							},
 							{
@@ -133,10 +134,11 @@
 									"path": "$['redeem_criteria']"
 								},
 								"sink": {
-									"ordinal": 2
+									"name": "redeem_criteria"
 								}
 							}
-						]
+						],
+						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
