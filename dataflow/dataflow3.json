@@ -19,11 +19,14 @@
 				}
 			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          exchange_criteria as string,",
+				"          redeem_criteria as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'documentPerLine',",
-				"     backslashEscape: true) ~> source1",
+				"     documentForm: 'documentPerLine') ~> source1",
 				"source1 derive(aaa = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
