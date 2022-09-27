@@ -1,0 +1,13 @@
+{
+	"name": "AzureMLService1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureMLService",
+		"typeProperties": {
+			"subscriptionId": "d050af2c-cbd5-40e7-a95d-c6119e9cf256",
+			"resourceGroupName": "RG-taizawa001",
+			"mlWorkspaceName": "taizawa-AML",
+			"authentication": "MSI"
+		}
+	}
+}

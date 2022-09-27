@@ -1,0 +1,132 @@
+{
+	"name": "DelimitedText_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "coupons_220907_サンプル.csv",
+				"container": "jsonconvert"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\"",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "coupon_id",
+				"type": "String"
+			},
+			{
+				"name": "coupon_code",
+				"type": "String"
+			},
+			{
+				"name": "coupon_name",
+				"type": "String"
+			},
+			{
+				"name": "status",
+				"type": "String"
+			},
+			{
+				"name": "coupon_class",
+				"type": "String"
+			},
+			{
+				"name": "coupon_type",
+				"type": "String"
+			},
+			{
+				"name": "redeem_method",
+				"type": "String"
+			},
+			{
+				"name": "smile_num",
+				"type": "String"
+			},
+			{
+				"name": "image_url",
+				"type": "String"
+			},
+			{
+				"name": "description",
+				"type": "String"
+			},
+			{
+				"name": "description_for_redeem",
+				"type": "String"
+			},
+			{
+				"name": "sanrio_event_id",
+				"type": "String"
+			},
+			{
+				"name": "number_of_people_required",
+				"type": "String"
+			},
+			{
+				"name": "number_of_people_limit",
+				"type": "String"
+			},
+			{
+				"name": "stock_unit",
+				"type": "String"
+			},
+			{
+				"name": "authority",
+				"type": "String"
+			},
+			{
+				"name": "exchange_count_type",
+				"type": "String"
+			},
+			{
+				"name": "exchange_limit",
+				"type": "String"
+			},
+			{
+				"name": "exchange_criteria",
+				"type": "String"
+			},
+			{
+				"name": "redeem_criteria",
+				"type": "String"
+			},
+			{
+				"name": "display_used_coupon",
+				"type": "String"
+			},
+			{
+				"name": "start_timestamp",
+				"type": "String"
+			},
+			{
+				"name": "end_timestamp",
+				"type": "String"
+			},
+			{
+				"name": "expiration_date",
+				"type": "String"
+			},
+			{
+				"name": "expiration_duration",
+				"type": "String"
+			},
+			{
+				"name": "created",
+				"type": "String"
+			},
+			{
+				"name": "modified",
+				"type": "String"
+			}
+		]
+	}
+}
