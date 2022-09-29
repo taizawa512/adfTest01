@@ -1,0 +1,28 @@
+{
+	"name": "pipeline6",
+	"properties": {
+		"activities": [
+			{
+				"name": "Machine Learning Execute Pipeline1",
+				"type": "AzureMLExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"mlPipelineId": "702c4a36-09f0-42b2-9426-86f083c80094"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureMLService2",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
