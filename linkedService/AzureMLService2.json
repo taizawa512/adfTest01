@@ -10,7 +10,7 @@
 			"authentication": "MSI"
 		},
 		"connectVia": {
-			"referenceName": "AzureintegrationRuntime",
+			"referenceName": "SHIR-taizawa2",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
