@@ -1,0 +1,7 @@
+{
+	"name": "AzureMLService855",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.MachineLearningServices/workspaces/taizawa-AML",
+		"groupId": "amlworkspace"
+	}
+}
