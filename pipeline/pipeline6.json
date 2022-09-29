@@ -21,6 +21,27 @@
 					"referenceName": "AzureMLService2",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Machine Learning Execute Pipeline2",
+				"type": "AzureMLExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"mlPipelineEndpointId": "26bc00fa-aef6-48f9-b7cc-bc4d1be75cdf",
+					"version": "0"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureMLService1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
