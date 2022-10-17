@@ -13,7 +13,19 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/adftutorial/mynotebook",
+					"libraries": [
+						{
+							"jar": "dbfs:test.jar"
+						}
+					]
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks_LinkedService_001",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
