@@ -1,0 +1,21 @@
+{
+	"name": "AzureDatabricks1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-314905698721317.17.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Databricks/workspaces/Taizawa-Databricks-ws",
+			"newClusterNodeType": "Standard_DS3_v2",
+			"newClusterNumOfWorker": "1",
+			"newClusterVersion": "10.4.x-scala2.12",
+			"newClusterInitScripts": [],
+			"clusterOption": "Fixed"
+		},
+		"connectVia": {
+			"referenceName": "AzureintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
