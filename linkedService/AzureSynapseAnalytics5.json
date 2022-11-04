@@ -1,0 +1,14 @@
+{
+	"name": "AzureSynapseAnalytics5",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=taizawatest001.sql.azuresynapse.net;Initial Catalog=SampleSQL"
+		},
+		"connectVia": {
+			"referenceName": "AzureintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
