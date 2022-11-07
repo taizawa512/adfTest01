@@ -1,0 +1,37 @@
+{
+	"name": "Blob_2210270060001002",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "2210270060001002_DF",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"sink1": {
+								"Folderpass": "hoge"
+							}
+						}
+					},
+					"integrationRuntime": {
+						"referenceName": "AzureintegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": []
+	}
+}

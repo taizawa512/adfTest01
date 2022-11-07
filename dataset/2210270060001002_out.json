@@ -1,0 +1,31 @@
+{
+	"name": "2210270060001002_out",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blob_2210270060001002",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Folderpass": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Troubleinfo_h2s.csv",
+				"folderPath": {
+					"value": "@dataset().Folderpass",
+					"type": "Expression"
+				},
+				"container": "2210270060001002-out"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

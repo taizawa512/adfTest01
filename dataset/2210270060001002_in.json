@@ -1,0 +1,22 @@
+{
+	"name": "2210270060001002_in",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blob_2210270060001002",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "2210260060000755001_001.csv",
+				"container": "2210270060001002-in"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
