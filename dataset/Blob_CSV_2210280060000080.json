@@ -1,0 +1,48 @@
+{
+	"name": "Blob_CSV_2210280060000080",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "2210280060000080_001.csv",
+				"container": "2210280060000080-in"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "num",
+				"type": "String"
+			},
+			{
+				"name": "decimal",
+				"type": "String"
+			},
+			{
+				"name": "single",
+				"type": "String"
+			},
+			{
+				"name": "double",
+				"type": "String"
+			},
+			{
+				"name": "string",
+				"type": "String"
+			}
+		]
+	}
+}
