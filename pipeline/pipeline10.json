@@ -147,10 +147,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "dataflow3",
-						"type": "DataFlowReference"
-					},
 					"integrationRuntime": {
 						"referenceName": "AzureintegrationRuntime",
 						"type": "IntegrationRuntimeReference"
