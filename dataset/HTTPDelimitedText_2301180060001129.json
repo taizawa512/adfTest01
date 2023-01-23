@@ -1,0 +1,22 @@
+{
+	"name": "HTTPDelimitedText_2301180060001129",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HttpServer_2301180060001129",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "$web/cars.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
