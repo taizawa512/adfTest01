@@ -1,0 +1,17 @@
+{
+	"name": "HttpServer_2301180060001129",
+	"properties": {
+		"description": "BlobからCSVを取得",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://storageacctaizawa.blob.core.windows.net/$web/cars.csv",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "AzureintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
