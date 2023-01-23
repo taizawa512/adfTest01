@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "$web/cars.csv"
+				"relativeUrl": "cars.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
