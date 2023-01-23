@@ -1,0 +1,16 @@
+{
+	"name": "HttpServer1",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://data.bodik.jp/dataset/dbf4683e-393d-4429-b775-5b02874a6d04/resource/57803024-20b4-4e8a-b5a6-4957f098a051/download/tm-rain.csv",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "AzureintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
