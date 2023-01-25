@@ -5,14 +5,14 @@
 		"annotations": [],
 		"type": "Salesforce",
 		"typeProperties": {
-			"environmentUrl": "https://login.salesforce.com",
+			"environmentUrl": "https://mskk-taizawa-dev-ed.my.salesforce.com",
 			"username": "aizawax512+api01@gmail.com",
 			"apiVersion": "54.0",
 			"extendedProperties": "ProxyHost=localhost;ProxyPort=3128;CertsPath=C:\\temp\\cafile\\Sf_dev202102.cer",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4ZTdmYmZhYS01NDQ4LTQ3Y2MtYmE0MC05MDE1MTliZDM0MjUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDRGMDBENDY0LTc2RTQtNDg5OS1BQ0U2LThFQzgyNTY5MjAwQ19jMzY3ZTQ3NC1kODU4LTQ1ZTUtOGYyOS0wZjAzZGY3ZmE1ODQiDQp9"
 		},
 		"connectVia": {
-			"referenceName": "SHIR-taizawa2",
+			"referenceName": "AzureintegrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
