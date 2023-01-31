@@ -1,0 +1,22 @@
+{
+	"name": "FtpServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "ローカル端末",
+		"annotations": [],
+		"type": "FtpServer",
+		"typeProperties": {
+			"host": "localhost",
+			"port": 21,
+			"enableSsl": false,
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Basic",
+			"userName": "ftp_user",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkMGZhOTczZC1mODdmLTQ5ZTgtOGYwMy1hNDQ5NjkzNDIzYjIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
