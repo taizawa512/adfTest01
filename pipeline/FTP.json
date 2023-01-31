@@ -1,0 +1,106 @@
+{
+	"name": "FTP",
+	"properties": {
+		"description": "ワイルドカード",
+		"activities": [
+			{
+				"name": "set_full_date",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "var_full_datetime",
+					"value": {
+						"value": "@formatDateTime(subtractFromTime(convertFromUtc(utcNow(),'Tokyo Standard Time'),1,'Day'),'yyyyMMdd')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "set_full_date",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FtpReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "test",
+							"wildcardFileName": {
+								"value": "@{concat(variables('var_full_datetime'),'*1000ENEUTL.csv')}",
+								"type": "Expression"
+							},
+							"enablePartitionDiscovery": false,
+							"useBinaryTransfer": true,
+							"disableChunking": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ftp_csv",
+						"type": "DatasetReference",
+						"parameters": {
+							"prm_dir": "hoge",
+							"prm_filename": "fuga"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Blob_DelimitedText",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "2301310060000200"
+						}
+					}
+				]
+			}
+		],
+		"variables": {
+			"var_full_datetime": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
