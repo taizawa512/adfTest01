@@ -25,7 +25,7 @@
 						"formatSettings": {
 							"type": "XmlReadSettings",
 							"validationMode": "none",
-							"detectDataType": false,
+							"detectDataType": true,
 							"namespaces": true
 						}
 					},
@@ -42,41 +42,64 @@
 							{
 								"source": {
 									"path": "['author']"
-								}
-							},
-							{
-								"source": {
-									"path": "['title']"
+								},
+								"sink": {
+									"name": "Author",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['genre']"
+								},
+								"sink": {
+									"name": "Genre",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['price']"
+								},
+								"sink": {
+									"name": "Price",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['publish_date']"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['description']"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['test']"
+								},
+								"sink": {
+									"name": "Test",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['@id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String"
 								}
 							}
 						],
