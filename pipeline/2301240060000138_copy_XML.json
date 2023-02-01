@@ -1,0 +1,106 @@
+{
+	"name": "2301240060000138_copy_XML",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "XmlSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "XmlReadSettings",
+							"validationMode": "none",
+							"detectDataType": false,
+							"namespaces": true
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['author']"
+								}
+							},
+							{
+								"source": {
+									"path": "['title']"
+								}
+							},
+							{
+								"source": {
+									"path": "['genre']"
+								}
+							},
+							{
+								"source": {
+									"path": "['price']"
+								}
+							},
+							{
+								"source": {
+									"path": "['publish_date']"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								}
+							},
+							{
+								"source": {
+									"path": "['test']"
+								}
+							},
+							{
+								"source": {
+									"path": "['@id']"
+								}
+							}
+						],
+						"collectionReference": "$['catalog']['book']",
+						"mapComplexValuesToString": false
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Blob_Xml",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "ADFTest"
+		},
+		"annotations": []
+	}
+}
