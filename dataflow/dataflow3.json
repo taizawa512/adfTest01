@@ -1,0 +1,55 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Blob_Jspn1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Blob_Jspn1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1",
+					"description": "データを Blob_Jsn1 にエクスポートします"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "derivedColumn2"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          event_params as (key as string, value as (string_value as string, int_value as integer, float_value as double, double_value as double))[]",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'arrayOfDocuments') ~> source1",
+				"source1 derive(target_param = find(event_params, #item.key=='abcd')) ~> derivedColumn1",
+				"derivedColumn1 derive(target_value = target_param.value.string_value) ~> derivedColumn2",
+				"derivedColumn2 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          event_params as (key as string, value as (string_value as string, int_value as integer, float_value as double, double_value as double))[]",
+				"     ),",
+				"     partitionFileNames:['result.json'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"name": "Blob_Jspn1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "20230201_テストデータ.json",
+				"container": "2301270060000662"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"event_params": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"key": {
+								"type": "string"
+							},
+							"value": {
+								"type": "object",
+								"properties": {
+									"string_value": {
+										"type": "string"
+									},
+									"int_value": {
+										"type": "integer"
+									},
+									"float_value": {
+										"type": "number"
+									},
+									"double_value": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
