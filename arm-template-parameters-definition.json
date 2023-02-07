@@ -117,8 +117,7 @@
                     "sasToken": "|",
                     "connectionString": "|:-connectionString:secureString",
                     "hostKeyFingerprint": "=",
-                    "mlWorkspaceName": "=",
-                    "securityToken": "="
+                    "mlWorkspaceName": "="
                 }
             }
         },
