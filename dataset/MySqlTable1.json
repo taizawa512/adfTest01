@@ -9,7 +9,7 @@
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`sample`"
+			"tableName": "`sample_view`"
 		}
 	}
 }

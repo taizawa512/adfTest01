@@ -57,18 +57,18 @@
 							{
 								"source": {
 									"name": "CREATED_YEAR_MONTH",
-									"type": "Int32"
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "CREATED_YEAR_MONTH",
-									"type": "Int32",
-									"physicalType": "INT_32"
+									"type": "String",
+									"physicalType": "UTF8"
 								}
 							}
 						],
 						"typeConversion": true,
 						"typeConversionSettings": {
-							"allowDataTruncation": true,
+							"allowDataTruncation": false,
 							"treatBooleanAsNumber": false
 						}
 					}

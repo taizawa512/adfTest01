@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "data_b36aa612-aa3a-42c6-a258-b574aa360fd4_0604ed69-5165-406c-af86-4fd6b7d22150.parquet",
 				"fileSystem": "2302080010000599"
 			},
 			"compressionCodec": "none"
@@ -24,10 +25,8 @@
 				"type": "UTF8"
 			},
 			{
-				"name": "CREATED_YEAR_MONTH",
-				"type": "DECIMAL",
-				"precision": 38,
-				"scale": 18
+				"name": "CREATED_YEAR_MONTH_",
+				"type": "INT32"
 			}
 		]
 	}
