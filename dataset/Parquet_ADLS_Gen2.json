@@ -12,8 +12,21 @@
 				"type": "AzureBlobFSLocation",
 				"fileSystem": "2302080010000599"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "ID",
+				"type": "INT32"
+			},
+			{
+				"name": "NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "CREATED_YEAR_MONTH",
+				"type": "INT32"
+			}
+		]
 	}
 }
