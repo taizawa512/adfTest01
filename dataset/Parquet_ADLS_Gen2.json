@@ -1,0 +1,19 @@
+{
+	"name": "Parquet_ADLS_Gen2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "2302080010000599"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
