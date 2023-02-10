@@ -25,7 +25,9 @@
 			},
 			{
 				"name": "CREATED_YEAR_MONTH",
-				"type": "INT32"
+				"type": "DECIMAL",
+				"precision": 38,
+				"scale": 18
 			}
 		]
 	}
