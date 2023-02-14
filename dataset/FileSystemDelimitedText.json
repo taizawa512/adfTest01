@@ -1,0 +1,20 @@
+{
+	"name": "FileSystemDelimitedText",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FileServer2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
