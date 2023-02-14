@@ -9,8 +9,8 @@
 			"port": 22,
 			"skipHostKeyValidation": true,
 			"authenticationType": "Basic",
-			"userName": "aaa",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzZDkyNzUxOS01MTQ4LTQyMWEtOWE2MS02MmM2MDk5ZmFkNzQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"userName": "ftp_user",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMDY5OTc5ZC0zMjcxLTRjZTgtODNlOS01YTEyZTRhNTk4ZmIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIR-taizawa2",
