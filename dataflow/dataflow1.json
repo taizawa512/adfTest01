@@ -46,7 +46,8 @@
 				"          MoviesCount as string",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     outputAssertFailedRows: true) ~> sink1"
 			]
 		}
 	}
