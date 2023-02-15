@@ -24,6 +24,9 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "assert1"
 				}
 			],
 			"scriptLines": [
@@ -39,7 +42,8 @@
 				"          MAIL2 = regexExtract(CONTENT, '([0-9]+)@mitsuichemicals.com', 1),",
 				"          {列1} = regexExtract(CONTENT, '(\\\\d+@mitsuichemicals.com)', 1),",
 				"          {列2} = regexExtract(CONTENT, '([0-9]+@mitsuichemicals\\\\.com)', 1)) ~> derivedColumn1",
-				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"derivedColumn1 assert(expectTrue(ERROR_FUNCTION(''), false, 'assert1')) ~> assert1",
+				"assert1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Year as string,",
