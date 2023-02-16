@@ -1,0 +1,16 @@
+{
+	"name": "HttpServer3",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://countries.trevorblades.com/",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
