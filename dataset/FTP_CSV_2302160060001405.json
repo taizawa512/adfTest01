@@ -1,0 +1,24 @@
+{
+	"name": "FTP_CSV_2302160060001405",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FtpServer1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FtpServerLocation",
+				"fileName": "test_2302160060001405.tar.gz",
+				"folderPath": "test"
+			},
+			"columnDelimiter": ",",
+			"compressionCodec": "TarGZip",
+			"compressionLevel": "Optimal",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
