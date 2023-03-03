@@ -1,18 +1,25 @@
 {
 	"name": "SharePointOnlineList2",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "SharePointOnlineList",
 		"typeProperties": {
-			"siteUrl": "a",
-			"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-			"servicePrincipalId": "a",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5OWZiMWMwYS0wNzFlLTRmNmUtODA1Zi1jZDdmZjAyMmE3MTMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"siteUrl": "https://jpdsd2.sharepoint.com/sites/SiteTest20230301",
+			"tenantId": "a0a58ec7-09e8-41f9-ae5a-0d67d1ccabc5",
+			"servicePrincipalId": "4d0976c7-9efc-4b69-b2bf-e5dbc1d38a13",
+			"servicePrincipalKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SharePoint-jpdsd2"
+			}
 		},
 		"connectVia": {
 			"referenceName": "SHIR-taizawa2",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
