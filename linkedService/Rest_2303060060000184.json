@@ -1,0 +1,17 @@
+{
+	"name": "Rest_2303060060000184",
+	"properties": {
+		"description": "https://disclosure.edinet-fsa.go.jp/api/v1/documents.json?date=2019-04-01&type=2\nから取得",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://disclosure.edinet-fsa.go.jp/api/v1/documents.json?date=2019-04-01&type=2",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		},
+		"connectVia": {
+			"referenceName": "AzureintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
