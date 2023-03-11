@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "dataflow1_copy1",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -23,6 +23,9 @@
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     num as integer (0)",
+				"}",
 				"source(output(",
 				"          ID as string,",
 				"          NAME as string,",
