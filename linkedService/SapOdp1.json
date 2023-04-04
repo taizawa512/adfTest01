@@ -1,0 +1,21 @@
+{
+	"name": "SapOdp1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SapOdp",
+		"typeProperties": {
+			"clientId": "aaa",
+			"language": "aaa",
+			"sncMode": false,
+			"userName": "aaa",
+			"server": "aaa",
+			"systemNumber": "aaa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5ZjBhODIwZi1iZTFjLTQxMDMtYWY4NS1mZWEzOTgxZTg4ZmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIR-taizawa2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
