@@ -1,0 +1,12 @@
+{
+	"name": "SapOdpResource1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SapOdp1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SapOdpResource",
+		"schema": []
+	}
+}

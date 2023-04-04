@@ -1,0 +1,12 @@
+{
+	"name": "DynamicsEntity366",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Dynamics365",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": []
+	}
+}
