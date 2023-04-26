@@ -8,7 +8,7 @@
 			"accountKind": "StorageV2"
 		},
 		"connectVia": {
-			"referenceName": "AzureintegrationRuntime",
+			"referenceName": "SHIR-taizawa2",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
