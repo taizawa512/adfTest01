@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "\\\\192.168.137.1\\sftp-root",
+			"host": "C://sftp-root",
 			"userId": "redmond\\taizawa",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0MzU0YjNjMy01Zjg3LTQyZTQtYTZkOC1mZTMxZGEwZDFlYzUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmMGZjOTJiOC00MGIwLTQzNmQtYTA4My01YmNjMjk3YjVmNjQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIR-taizawa2",
