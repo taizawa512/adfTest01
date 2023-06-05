@@ -1,5 +1,6 @@
 {
 	"name": "HttpServer_2301180060001129",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"description": "BlobからCSVを取得",
 		"annotations": [],

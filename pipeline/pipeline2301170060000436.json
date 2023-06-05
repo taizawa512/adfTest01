@@ -1,5 +1,5 @@
 {
-	"name": "pipeline9",
+	"name": "pipeline2301170060000436",
 	"properties": {
 		"activities": [
 			{
@@ -16,19 +16,26 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow2",
+						"referenceName": "Storage_To_Synapse",
 						"type": "DataFlowReference"
 					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
+					"staging": {
+						"linkedService": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "2301170060000436"
+					},
+					"integrationRuntime": {
+						"referenceName": "AzureintegrationRuntime",
+						"type": "IntegrationRuntimeReference"
 					},
 					"traceLevel": "Fine"
 				}
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2023-03-11T09:41:46Z"
+		"lastPublishTime": "2023-02-06T07:50:49Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
