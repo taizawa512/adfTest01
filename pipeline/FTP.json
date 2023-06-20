@@ -7,6 +7,12 @@
 				"name": "set_full_date",
 				"type": "SetVariable",
 				"dependsOn": [],
+				"policy": {
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "var_full_datetime",
@@ -101,6 +107,8 @@
 				"type": "String"
 			}
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2023-03-11T09:41:46Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

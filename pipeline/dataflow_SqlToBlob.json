@@ -30,6 +30,8 @@
 		"folder": {
 			"name": "ADFTest"
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2023-03-11T09:41:46Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

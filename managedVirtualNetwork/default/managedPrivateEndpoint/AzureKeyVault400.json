@@ -2,6 +2,9 @@
 	"name": "AzureKeyVault400",
 	"properties": {
 		"privateLinkResourceId": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-adftemplate001/providers/Microsoft.KeyVault/vaults/TaizawaTestKeyVault01",
-		"groupId": "vault"
+		"groupId": "vault",
+		"fqdns": [
+			"taizawatestkeyvault01.vault.azure.net"
+		]
 	}
 }
