@@ -1,0 +1,25 @@
+{
+	"name": "trigger10",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "JSON_convert2",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2023-09-25T13:57:00",
+				"endTime": "2023-09-26T13:57:00",
+				"timeZone": "Tokyo Standard Time"
+			}
+		}
+	}
+}
