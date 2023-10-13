@@ -4,146 +4,8 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "データ ファクトリ名",
 			"defaultValue": "ADF-taizawa002"
-		},
-		"SharePointOnlineList_admin2_servicePrincipalKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineList_admin2'"
-		},
-		"SharePointOnlineList_owner02_servicePrincipalKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineList_owner02'"
-		},
-		"SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId": {
-			"type": "string",
-			"defaultValue": "bcb3ef6d-233f-4a5f-a65c-736adf68a47e"
-		},
-		"SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId": {
-			"type": "string",
-			"defaultValue": "b129a7ab-f323-4f8d-83ef-102d320f3267"
-		},
-		"BlobEventsTrigger001_properties_TriggerTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "@triggerBody().folderPath"
-		},
-		"BlobEventsTrigger001_properties_TriggerTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "@triggerBody().fileName"
-		},
-		"BlobEventsTrigger001_properties_TriggerTest_parameters_p3": {
-			"type": "string",
-			"defaultValue": "@triggerBody().startTime"
-		},
-		"BlobEventsTrigger001_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/datalakestoragetaizawa"
-		},
-		"SchduleTrigger001_properties_TriggerTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "param1"
-		},
-		"SchduleTrigger001_properties_TriggerTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "param2"
-		},
-		"SchduleTrigger001_properties_TriggerTest_parameters_p3": {
-			"type": "string",
-			"defaultValue": "param3"
-		},
-		"Schedule_TriggerTest002_properties_TriggerTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "1"
-		},
-		"Schedule_TriggerTest002_properties_TriggerTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "2"
-		},
-		"Schedule_TriggerTest002_properties_TriggerTest_parameters_p3": {
-			"type": "string",
-			"defaultValue": "3"
-		},
-		"StorageEventTest_properties_TriggerTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "@triggerBody().folderPath"
-		},
-		"StorageEventTest_properties_TriggerTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "@triggerBody().fileName"
-		},
-		"StorageEventTest_properties_TriggerTest_parameters_p3": {
-			"type": "string",
-			"defaultValue": "test"
-		},
-		"StorageEventTest_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/datalakestoragetaizawa"
-		},
-		"trigger2_properties_TriggerTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "@triggerBody().folderPath"
-		},
-		"trigger2_properties_TriggerTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "@triggerBody().fileName"
-		},
-		"trigger2_properties_TriggerTest_parameters_p3": {
-			"type": "string",
-			"defaultValue": "@trigger().startTime"
-		},
-		"trigger2_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa"
-		},
-		"AzureFileStorage222_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa"
-		},
-		"AzureFileStorage222_properties_groupId": {
-			"type": "string",
-			"defaultValue": "file"
-		},
-		"AzureFileStorage222_properties_fqdns": {
-			"type": "array",
-			"defaultValue": [
-				"storageacctaizawa.file.core.windows.net"
-			]
-		},
-		"AzureFunction584_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/taizawaTest001_group/providers/Microsoft.Web/sites/taizawaTest001"
-		},
-		"AzureFunction584_properties_groupId": {
-			"type": "string",
-			"defaultValue": "sites"
-		},
-		"AzureSynapseAnalytics284_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Synapse/workspaces/taizawatest001"
-		},
-		"AzureSynapseAnalytics284_properties_groupId": {
-			"type": "string",
-			"defaultValue": "sql"
-		},
-		"AzureSynapseAnalytics284_properties_fqdns": {
-			"type": "array",
-			"defaultValue": [
-				"taizawatest001.sql.azuresynapse.net"
-			]
-		},
-		"PrivateLinkService892_properties_privateLinkResourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/mc_taizawaaksprivate0711_2_taizawaaksprivatecluster0711-2_japaneast/providers/Microsoft.Network/privateLinkServices/pls-a3cf84b5be1564d03a702771f8fcd5d0"
-		},
-		"PrivateLinkService892_properties_groupId": {
-			"type": "string",
-			"defaultValue": ""
-		},
-		"PrivateLinkService892_properties_fqdns": {
-			"type": "array",
-			"defaultValue": [
-				"lb.private.contoso.com"
-			]
 		}
 	},
 	"variables": {
@@ -151,658 +13,1854 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/SharePointOnlineList_admin2')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"name": "[concat(parameters('factoryName'), '/ExcelForDynamics365')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"type": "SharePointOnlineList",
-				"typeProperties": {
-					"siteUrl": "https://m365x78964420.sharepoint.com/sites/Test/",
-					"tenantId": "258711a2-7ca6-44f7-b8c8-2e5fb1833f7c",
-					"servicePrincipalId": "[parameters('SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId')]",
-					"servicePrincipalKey": {
-						"type": "SecureString",
-						"value": "[parameters('SharePointOnlineList_admin2_servicePrincipalKey')]"
-					}
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
 				},
-				"connectVia": {
-					"referenceName": "SHIR-taizawa2",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SharePointOnlineList_owner02')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
 				"annotations": [],
-				"type": "SharePointOnlineList",
+				"type": "Excel",
 				"typeProperties": {
-					"siteUrl": "https://m365x78964420.sharepoint.com/sites/Test/",
-					"tenantId": "258711a2-7ca6-44f7-b8c8-2e5fb1833f7c",
-					"servicePrincipalId": "[parameters('SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId')]",
-					"servicePrincipalKey": {
-						"type": "SecureString",
-						"value": "[parameters('SharePointOnlineList_owner02_servicePrincipalKey')]"
-					}
+					"sheetName": "受注",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "20220523_001.xlsx",
+						"container": "dynamics365"
+					},
+					"firstRowAsHeader": true
 				},
-				"connectVia": {
-					"referenceName": "SHIR-taizawa2",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/0805Test01_1')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "pipeline4",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 15,
-					"startTime": "2022-08-05T02:16:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 1,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": []
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/0805Test01_2')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "pipeline4",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 15,
-					"startTime": "2022-08-05T02:18:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 2,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": []
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/0825Test_01')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "pipeline4",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 15,
-					"startTime": "2022-08-25T07:30:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 1,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": [
-						{
-							"type": "SelfDependencyTumblingWindowTriggerReference",
-							"offset": "-0.15:00:00"
-						}
-					]
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/0825Test_02')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "wait",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
-				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 15,
-					"startTime": "2022-08-25T08:00:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 1,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": [
-						{
-							"type": "SelfDependencyTumblingWindowTriggerReference",
-							"offset": "-0.00:15:00"
-						}
-					]
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BlobEventsTrigger001')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [
+				"schema": [
 					{
-						"pipelineReference": {
-							"referenceName": "TriggerTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('BlobEventsTrigger001_properties_TriggerTest_parameters_p1')]",
-							"p2": "[parameters('BlobEventsTrigger001_properties_TriggerTest_parameters_p2')]",
-							"p3": "[parameters('BlobEventsTrigger001_properties_TriggerTest_parameters_p3')]"
-						}
+						"name": "受注ID",
+						"type": "String"
+					},
+					{
+						"name": "名前",
+						"type": "String"
+					},
+					{
+						"name": "ステータス",
+						"type": "String"
+					},
+					{
+						"name": "合計金額",
+						"type": "String"
+					},
+					{
+						"name": "顧客",
+						"type": "String"
+					},
+					{
+						"name": "電子メール (顧客) (取引先担当者 )",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/IncLoadTestSink')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "incLoadTaizawa001",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "customer_id",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "first_name",
+						"type": "varchar"
+					},
+					{
+						"name": "last_name",
+						"type": "varchar"
+					},
+					{
+						"name": "email",
+						"type": "varchar"
+					},
+					{
+						"name": "city",
+						"type": "varchar"
 					}
 				],
-				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/root/blobs/202206",
-					"blobPathEndsWith": ".csv",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('BlobEventsTrigger001_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
+					"schema": "dbo",
+					"table": "test_customers_sink"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SchduleTrigger001')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/IncLoadTestSource')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "TriggerTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('SchduleTrigger001_properties_TriggerTest_parameters_p1')]",
-							"p2": "[parameters('SchduleTrigger001_properties_TriggerTest_parameters_p2')]",
-							"p3": "[parameters('SchduleTrigger001_properties_TriggerTest_parameters_p3')]"
-						}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 20,
-						"startTime": "2022-06-07T05:30:00Z",
-						"endTime": "2022-06-07T06:00:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Schedule_TriggerTest002')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "マイナス値のテスト",
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "TriggerTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('Schedule_TriggerTest002_properties_TriggerTest_parameters_p1')]",
-							"p2": "[parameters('Schedule_TriggerTest002_properties_TriggerTest_parameters_p2')]",
-							"p3": "[parameters('Schedule_TriggerTest002_properties_TriggerTest_parameters_p3')]"
-						}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Month",
-						"interval": 1,
-						"startTime": "2022-07-15T03:58:00",
-						"endTime": "2022-07-31T23:58:00",
-						"timeZone": "Tokyo Standard Time",
-						"schedule": {
-							"minutes": [
-								5
-							],
-							"hours": [
-								13
-							],
-							"monthDays": [
-								-17,
-								1,
-								-1
-							]
-						}
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/StorageEventTest')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "TriggerTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('StorageEventTest_properties_TriggerTest_parameters_p1')]",
-							"p2": "[parameters('StorageEventTest_properties_TriggerTest_parameters_p2')]",
-							"p3": "[parameters('StorageEventTest_properties_TriggerTest_parameters_p3')]"
-						}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/root/blobs/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('StorageEventTest_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger2')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "TriggerTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('trigger2_properties_TriggerTest_parameters_p1')]",
-							"p2": "[parameters('trigger2_properties_TriggerTest_parameters_p2')]",
-							"p3": "[parameters('trigger2_properties_TriggerTest_parameters_p3')]"
-						}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/input/blobs/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('trigger2_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger8')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "wait",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
+				"linkedServiceName": {
+					"referenceName": "incLoadTaizawa001",
+					"type": "LinkedServiceReference"
 				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Minute",
-					"interval": 15,
-					"startTime": "2022-08-22T12:15:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 1,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": [
-						{
-							"type": "SelfDependencyTumblingWindowTriggerReference",
-							"offset": "-0.00:15:00"
-						}
-					]
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "Managed",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "Japan East",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 10,
-							"cleanup": false
-						},
-						"pipelineExternalComputeScaleProperties": {
-							"timeToLive": 60
-						}
-					}
-				},
-				"managedVirtualNetwork": {
-					"type": "ManagedVirtualNetworkReference",
-					"referenceName": "default"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntimeManagedVnet')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "Managed",
-				"typeProperties": {
-					"computeProperties": {
-						"location": "Japan East",
-						"dataFlowProperties": {
-							"computeType": "General",
-							"coreCount": 8,
-							"timeToLive": 10,
-							"cleanup": false
-						},
-						"pipelineExternalComputeScaleProperties": {
-							"timeToLive": 60
-						}
-					}
-				},
-				"managedVirtualNetwork": {
-					"type": "ManagedVirtualNetworkReference",
-					"referenceName": "default"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/default/AzureFileStorage222')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"privateLinkResourceId": "[parameters('AzureFileStorage222_properties_privateLinkResourceId')]",
-				"groupId": "[parameters('AzureFileStorage222_properties_groupId')]",
-				"fqdns": "[parameters('AzureFileStorage222_properties_fqdns')]"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/default/AzureFunction584')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"privateLinkResourceId": "[parameters('AzureFunction584_properties_privateLinkResourceId')]",
-				"groupId": "[parameters('AzureFunction584_properties_groupId')]"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/default/AzureSynapseAnalytics284')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"privateLinkResourceId": "[parameters('AzureSynapseAnalytics284_properties_privateLinkResourceId')]",
-				"groupId": "[parameters('AzureSynapseAnalytics284_properties_groupId')]",
-				"fqdns": "[parameters('AzureSynapseAnalytics284_properties_fqdns')]"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/default/PrivateLinkService892')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks/managedPrivateEndpoints",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"privateLinkResourceId": "[parameters('PrivateLinkService892_properties_privateLinkResourceId')]",
-				"groupId": "[parameters('PrivateLinkService892_properties_groupId')]",
-				"fqdns": "[parameters('PrivateLinkService892_properties_fqdns')]"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/2206030060000373_CSV')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
 					{
-						"name": "2206030060000373",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "Wait2",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 3,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "2206030060000373_in",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Parquet1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "customer_id",
+						"type": "int",
+						"precision": 10
 					},
 					{
-						"name": "Wait1",
-						"type": "Wait",
-						"dependsOn": [
-							{
-								"activity": "2206030060000373",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"waitTimeInSeconds": 10
-						}
+						"name": "first_name",
+						"type": "varchar"
 					},
 					{
-						"name": "Wait2",
-						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"waitTimeInSeconds": 1
-						}
+						"name": "last_name",
+						"type": "varchar"
+					},
+					{
+						"name": "email",
+						"type": "varchar"
+					},
+					{
+						"name": "city",
+						"type": "varchar"
 					}
 				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "test_customers"
+				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/7z_Copy')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/Json1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
-					{
-						"name": "7z_Copy",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 3,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "BinarySource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"wildcardFileName": "*",
-									"deleteFilesAfterCompletion": false
-								},
-								"formatSettings": {
-									"type": "BinaryReadSettings"
-								}
-							},
-							"sink": {
-								"type": "BinarySink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "7zip",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "7zip_ADLSGen2",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "json"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/MoviesCsv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "movies.csv",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "movieId",
+						"type": "String"
+					},
+					{
+						"name": "title",
+						"type": "String"
+					},
+					{
+						"name": "genres",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/OutputCsv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Parquet1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "output"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "Id",
+						"type": "UTF8"
+					},
+					{
+						"name": "IsDeleted",
+						"type": "UTF8"
+					},
+					{
+						"name": "MasterRecordId",
+						"type": "UTF8"
+					},
+					{
+						"name": "AccountId",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastName",
+						"type": "UTF8"
+					},
+					{
+						"name": "FirstName",
+						"type": "UTF8"
+					},
+					{
+						"name": "Salutation",
+						"type": "UTF8"
+					},
+					{
+						"name": "Name",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherStreet",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherCity",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherState",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherPostalCode",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherCountry",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherLatitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherLongitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherGeocodeAccuracy",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingStreet",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingCity",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingState",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingPostalCode",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingCountry",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingLatitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingLongitude",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingGeocodeAccuracy",
+						"type": "UTF8"
+					},
+					{
+						"name": "Phone",
+						"type": "UTF8"
+					},
+					{
+						"name": "Fax",
+						"type": "UTF8"
+					},
+					{
+						"name": "MobilePhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "HomePhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "OtherPhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "AssistantPhone",
+						"type": "UTF8"
+					},
+					{
+						"name": "ReportsToId",
+						"type": "UTF8"
+					},
+					{
+						"name": "Email",
+						"type": "UTF8"
+					},
+					{
+						"name": "Title",
+						"type": "UTF8"
+					},
+					{
+						"name": "Department",
+						"type": "UTF8"
+					},
+					{
+						"name": "AssistantName",
+						"type": "UTF8"
+					},
+					{
+						"name": "LeadSource",
+						"type": "UTF8"
+					},
+					{
+						"name": "Birthdate",
+						"type": "UTF8"
+					},
+					{
+						"name": "Description",
+						"type": "UTF8"
+					},
+					{
+						"name": "CurrencyIsoCode",
+						"type": "UTF8"
+					},
+					{
+						"name": "OwnerId",
+						"type": "UTF8"
+					},
+					{
+						"name": "HasOptedOutOfEmail",
+						"type": "UTF8"
+					},
+					{
+						"name": "HasOptedOutOfFax",
+						"type": "UTF8"
+					},
+					{
+						"name": "DoNotCall",
+						"type": "UTF8"
+					},
+					{
+						"name": "CreatedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "CreatedById",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastModifiedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastModifiedById",
+						"type": "UTF8"
+					},
+					{
+						"name": "SystemModstamp",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastActivityDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastCURequestDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastCUUpdateDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastViewedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastReferencedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "EmailBouncedReason",
+						"type": "UTF8"
+					},
+					{
+						"name": "EmailBouncedDate",
+						"type": "UTF8"
+					},
+					{
+						"name": "IsEmailBounced",
+						"type": "UTF8"
+					},
+					{
+						"name": "PhotoUrl",
+						"type": "UTF8"
+					},
+					{
+						"name": "Jigsaw",
+						"type": "UTF8"
+					},
+					{
+						"name": "JigsawContactId",
+						"type": "UTF8"
+					},
+					{
+						"name": "IndividualId",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_PersonId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SOC__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_CompanyId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_CompanyInfo__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_PersonId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_PersonInfo__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MyDepartmentFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ABC_Evaluation__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ACCOUNT_NAME__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "AREA__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Address__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Building__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "BusinessLine__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ChangeDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "City__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Comment__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "DeletedFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MyDivisionFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "FirstName_Kana__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "HasOptedOutOfEmail__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MyOperationsDepartmentFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "LastName_Kana__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailMagazineFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailingList__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MobilePhone__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ON_Evaluation__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "OldSystemSeqNo__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "PRG_Evaluation__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "PostalCode__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Prefectures__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "RoleLevel__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "SeminarFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "saveFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ABC_Evaluation_Remark__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ABC__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ON__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "PRG__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MySectionFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__Needs_Score_Synced__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__Pardot_Last_Scored_At__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__campaign__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__comments__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__conversion_date__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__conversion_object_name__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__conversion_object_type__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__created_date__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_activity__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_search_term__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_search_type__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__first_touch_url__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__grade__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__last_activity__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__notes__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__pardot_hard_bounced__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__score__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__url__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_campaign__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_content__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_medium__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_source__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "pi__utm_term__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "DataSource__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "EventDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundInformation1__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundInformation2__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundInformation3__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InboundOccurrenceDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "JoinOrNotJoin__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "LeadOccurrenceDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "LeadTypeName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailDeliveryPermissionFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailDeliveryPermissionGetDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "MailDeliveryPermissionGetSource__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "SeminarID__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "SeminorName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_AutomaticKey__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransfeProcessingNum__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransferErrMsg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransferFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_LocationTransferNextProcessingDate__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_PersonId_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SLC_Difference__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SLC__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__CI_SOC_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__ConversionTargetFlg__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_CompanyId_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Sansan_PersonId_FK__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Sansan_CI__Tags__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_city__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_countryCode__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_postalCode__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_state__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_address_street__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_department__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_email__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_fax__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_firstName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_lastName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_mobilePhone__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_organizationName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_phone__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_person_position__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_organization_keywords__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_occupations__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_personId__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_positionRank__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "sci_sansan_person_tags__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ExcludedFromSendingMailCheckStatus__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "ExcludedFromSendingMailCheck__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "InvalidOwnerFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "KyoikuPersonFlag__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "CompanyName__c",
+						"type": "UTF8"
+					},
+					{
+						"name": "Remarks__c",
+						"type": "UTF8"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Parquet_ADLS_Gen2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "data_b36aa612-aa3a-42c6-a258-b574aa360fd4_0604ed69-5165-406c-af86-4fd6b7d22150.parquet",
+						"fileSystem": "2302080010000599"
+					},
+					"compressionCodec": "none"
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "INT32"
+					},
+					{
+						"name": "NAME",
+						"type": "UTF8"
+					},
+					{
+						"name": "CREATED_YEAR_MONTH_",
+						"type": "INT32"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_0c2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "test",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_0sv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_64o')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage7",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "String"
+					},
+					{
+						"name": "NAME",
+						"type": "String"
+					},
+					{
+						"name": "CONTENT",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_cdf')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_ja0')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "*.docx",
+						"container": "excelinput"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_lsz')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Test.csv",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": false,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_vk4')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/StorageAcountBinary')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "excelinput"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/regExtractTest_input')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "azureinfo.csv",
+						"container": "input"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\"",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "String"
+					},
+					{
+						"name": "NAME",
+						"type": "String"
+					},
+					{
+						"name": "CONTENT",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/regExtractTest_output')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Year",
+						"type": "String"
+					},
+					{
+						"name": "MoviesCount",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/rerun_test_in')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "in",
+						"fileSystem": "rerun-test"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "ID",
+						"type": "String"
+					},
+					{
+						"name": "NAME",
+						"type": "String"
+					},
+					{
+						"name": "CONTENT",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/rerun_test_out')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSGen2_datalakestoragetaizawa_MSI",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "out",
+						"fileSystem": "rerun-test"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
 			},
 			"dependsOn": []
 		}

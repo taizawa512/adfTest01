@@ -4,44 +4,40 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "データ ファクトリ名",
 			"defaultValue": "ADF-taizawa002"
 		},
 		"AzureBlobStorage2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+			"metadata": "'AzureBlobStorage2' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureBlobStorage3_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+			"metadata": "'AzureBlobStorage3' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureBlobStorage4_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+			"metadata": "'AzureBlobStorage4' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureBlobStorage5_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage5'"
+			"metadata": "'AzureBlobStorage5' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureBlobStorage6_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage6'"
+			"metadata": "'AzureBlobStorage6' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureBlobStorage7_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage7'"
+			"metadata": "'AzureBlobStorage7' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "'AzureDataLakeStorage1' の 'accountKey' のセキュリティで保護された文字列"
 		},
 		"AzureDataLakeStorage2_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
-		},
-		"AzureDatabricks_LinkedService_001_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks_LinkedService_001'"
+			"metadata": "'AzureDataLakeStorage2' の 'accountKey' のセキュリティで保護された文字列"
 		},
 		"ADLSGen2_datalakestoragetaizawa_MSI_properties_typeProperties_url": {
 			"type": "string",
@@ -65,232 +61,26 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/2207060060000503_Rest')]",
+			"name": "[concat(parameters('factoryName'), '/2301260060000444')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "REST_VM_start",
-						"type": "WebActivity",
+						"name": "Wait1",
+						"type": "Wait",
 						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
 						"userProperties": [],
 						"typeProperties": {
-							"url": "https://management.azure.com/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Compute/virtualMachines/TaizawaTest01/start?api-version=2022-03-01",
-							"method": "POST",
-							"headers": {},
-							"body": {},
-							"authentication": {
-								"type": "MSI",
-								"resource": "https://management.azure.com/"
-							}
-						}
-					},
-					{
-						"name": "Until1",
-						"type": "Until",
-						"dependsOn": [
-							{
-								"activity": "REST_VM_start",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"expression": {
-								"value": "@equals(variables('status'), true)",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "REST_SHIR_Get_Status",
-									"type": "WebActivity",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "7.00:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [],
-									"typeProperties": {
-										"url": "https://management.azure.com/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.DataFactory/factories/ADF-taizawa002/integrationRuntimes/SHIR-taizawa1/getStatus?api-version=2018-06-01",
-										"method": "POST",
-										"headers": {},
-										"body": {},
-										"authentication": {
-											"type": "MSI",
-											"resource": "https://management.azure.com/"
-										}
-									}
-								},
-								{
-									"name": "If Condition1",
-									"type": "IfCondition",
-									"dependsOn": [
-										{
-											"activity": "REST_SHIR_Get_Status",
-											"dependencyConditions": [
-												"Succeeded"
-											]
-										}
-									],
-									"userProperties": [],
-									"typeProperties": {
-										"expression": {
-											"value": "@equals(activity('REST_SHIR_Get_Status').output.properties.state,'Online')",
-											"type": "Expression"
-										},
-										"ifFalseActivities": [
-											{
-												"name": "Set variable2",
-												"type": "SetVariable",
-												"dependsOn": [],
-												"userProperties": [],
-												"typeProperties": {
-													"variableName": "status",
-													"value": {
-														"value": "@bool(false)",
-														"type": "Expression"
-													}
-												}
-											},
-											{
-												"name": "Wait1",
-												"type": "Wait",
-												"dependsOn": [
-													{
-														"activity": "Set variable2",
-														"dependencyConditions": [
-															"Succeeded"
-														]
-													}
-												],
-												"userProperties": [],
-												"typeProperties": {
-													"waitTimeInSeconds": 30
-												}
-											}
-										],
-										"ifTrueActivities": [
-											{
-												"name": "Set variable1",
-												"type": "SetVariable",
-												"dependsOn": [],
-												"userProperties": [],
-												"typeProperties": {
-													"variableName": "status",
-													"value": {
-														"value": "@bool(true)",
-														"type": "Expression"
-													}
-												}
-											}
-										]
-									}
-								}
-							],
-							"timeout": "0.00:30:00"
-						}
-					},
-					{
-						"name": "REST_VM_stop",
-						"type": "WebActivity",
-						"dependsOn": [
-							{
-								"activity": "Until1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": "https://management.azure.com/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Compute/virtualMachines/TaizawaTest01/deallocate?api-version=2022-03-01",
-							"method": "POST",
-							"headers": {},
-							"body": {},
-							"authentication": {
-								"type": "MSI",
-								"resource": "https://management.azure.com/"
-							}
+							"waitTimeInSeconds": 300
 						}
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"variables": {
-					"status": {
-						"type": "Boolean",
-						"defaultValue": false
-					}
-				},
-				"folder": {
-					"name": "ADFTest"
+					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/2207060060000503_Rest_stop')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "REST_VM_stop",
-						"type": "WebActivity",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": "https://management.azure.com/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Compute/virtualMachines/TaizawaTest01/deallocate?api-version=2022-03-01",
-							"method": "POST",
-							"headers": {},
-							"body": {},
-							"authentication": {
-								"type": "MSI",
-								"resource": "https://management.azure.com/"
-							}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
+				"lastPublishTime": "2023-03-11T09:41:44Z"
 			},
 			"dependsOn": []
 		},
@@ -304,6 +94,10 @@
 						"name": "WebHookDecompress7z",
 						"type": "WebHook",
 						"dependsOn": [],
+						"policy": {
+							"secureOutput": false,
+							"secureInput": false
+						},
 						"userProperties": [],
 						"typeProperties": {
 							"url": "https://cd08f1ae-eaa6-4202-991f-5a63f633838a.webhook.jpe.azure-automation.net/webhooks?token=FGPXKa4kNLgsh0%2ffs0DjSwXjiXKmf9j4P80GoQYG%2bmw%3d",
@@ -316,14 +110,37 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"folder": {
 					"name": "ADFTest"
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-07-26T05:43:15Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/JSON_convert2')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 1
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-03-11T09:41:44Z"
 			},
 			"dependsOn": []
 		},
@@ -366,8 +183,7 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"parameters": {
 					"p1": {
@@ -398,6 +214,10 @@
 						"name": "WebHookUnzip7z",
 						"type": "WebHook",
 						"dependsOn": [],
+						"policy": {
+							"secureOutput": false,
+							"secureInput": false
+						},
 						"userProperties": [],
 						"typeProperties": {
 							"url": "https://cd08f1ae-eaa6-4202-991f-5a63f633838a.webhook.jpe.azure-automation.net/webhooks?token=d9B%2bxq4%2f8VVcLQ8j2%2fglH8EK9pksIhdi7OnB0J0nd7E%3d",
@@ -413,8 +233,7 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"variables": {
 					"varConnectionName": {
@@ -465,8 +284,7 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"variables": {
 					"a": {
@@ -495,11 +313,34 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-08-25T06:31:09Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline5')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 1
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-03-11T09:41:44Z"
 			},
 			"dependsOn": []
 		},
@@ -568,8 +409,7 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-08-23T03:00:20Z"
@@ -593,8 +433,7 @@
 					}
 				],
 				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
+					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-08-22T12:22:33Z"
@@ -736,29 +575,6 @@
 						"type": "SecureString",
 						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDatabricks_LinkedService_001')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Databricksのテスト",
-				"annotations": [],
-				"type": "AzureDatabricks",
-				"typeProperties": {
-					"domain": "https://adb-314905698721317.17.azuredatabricks.net",
-					"accessToken": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDatabricks_LinkedService_001_accessToken')]"
-					},
-					"newClusterNodeType": "Standard_DS3_v2",
-					"newClusterNumOfWorker": "2",
-					"newClusterVersion": "10.3.x-scala2.12",
-					"newClusterInitScripts": [],
-					"clusterOption": "Fixed"
 				}
 			},
 			"dependsOn": []

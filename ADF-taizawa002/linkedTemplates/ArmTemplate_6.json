@@ -4,32 +4,164 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "データ ファクトリ名",
 			"defaultValue": "ADF-taizawa002"
 		},
-		"Schdule_TriggerTest003_properties_TriggerTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "1"
+		"MySqlOnVM_connectionString": {
+			"type": "secureString",
+			"metadata": "'MySqlOnVM' の 'connectionString' のセキュリティで保護された文字列"
 		},
-		"Schdule_TriggerTest003_properties_TriggerTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "2"
+		"PostgreSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "'PostgreSql1' の 'connectionString' のセキュリティで保護された文字列"
 		},
-		"Schdule_TriggerTest003_properties_TriggerTest_parameters_p3": {
-			"type": "string",
-			"defaultValue": "3"
+		"Salesforce1_password": {
+			"type": "secureString",
+			"metadata": "'Salesforce1' の 'password' のセキュリティで保護された文字列"
 		},
-		"trigger3_properties_RenameTest_parameters_p1": {
-			"type": "string",
-			"defaultValue": "@triggerBody().folderPath"
+		"Salesforce1_securityToken": {
+			"type": "secureString",
+			"metadata": "'Salesforce1' の 'securityToken' のセキュリティで保護された文字列"
 		},
-		"trigger3_properties_RenameTest_parameters_p2": {
-			"type": "string",
-			"defaultValue": "@triggerBody().fileName"
+		"SalesforceServiceCloud1_password": {
+			"type": "secureString",
+			"metadata": "'SalesforceServiceCloud1' の 'password' のセキュリティで保護された文字列"
 		},
-		"trigger3_properties_typeProperties_scope": {
+		"SalesforceServiceCloud1_securityToken": {
+			"type": "secureString",
+			"metadata": "'SalesforceServiceCloud1' の 'securityToken' のセキュリティで保護された文字列"
+		},
+		"SapOdp1_password": {
+			"type": "secureString",
+			"metadata": "'SapOdp1' の 'password' のセキュリティで保護された文字列"
+		},
+		"SapTable1_password": {
+			"type": "secureString",
+			"metadata": "'SapTable1' の 'password' のセキュリティで保護された文字列"
+		},
+		"Sftp1_password": {
+			"type": "secureString",
+			"metadata": "'Sftp1' の 'password' のセキュリティで保護された文字列"
+		},
+		"Sftp2_password": {
+			"type": "secureString",
+			"metadata": "'Sftp2' の 'password' のセキュリティで保護された文字列"
+		},
+		"SharePointOnlineList1_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "'SharePointOnlineList1' の 'servicePrincipalKey' のセキュリティで保護された文字列"
+		},
+		"SharePointOnlineList_admin2_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "'SharePointOnlineList_admin2' の 'servicePrincipalKey' のセキュリティで保護された文字列"
+		},
+		"SharePointOnlineList_owner02_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "'SharePointOnlineList_owner02' の 'servicePrincipalKey' のセキュリティで保護された文字列"
+		},
+		"Snowflake1_connectionString": {
+			"type": "secureString",
+			"metadata": "'Snowflake1' の 'connectionString' のセキュリティで保護された文字列"
+		},
+		"HttpServer3_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Storage/storageAccounts/storageacctaizawa"
+			"defaultValue": "https://countries.trevorblades.com/"
+		},
+		"HttpServer_2301180060001129_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageacctaizawa.z11.web.core.windows.net/cars.csv"
+		},
+		"Rest_2303060060000184_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://disclosure.edinet-fsa.go.jp/api/v1/documents.json?date=2019-04-01&type=2"
+		},
+		"Salesforce1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://mskk-taizawa-dev-ed.my.salesforce.com"
+		},
+		"Salesforce1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": " aizawax512+api01@gmail.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_environmentUrl": {
+			"type": "string",
+			"defaultValue": "https://login.salesforce.com"
+		},
+		"SalesforceServiceCloud1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "testtest"
+		},
+		"SapOdp1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "aaa"
+		},
+		"SapOdp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "aaa"
+		},
+		"SapOdp1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aaa"
+		},
+		"SapOdp1_properties_typeProperties_systemNumber": {
+			"type": "string",
+			"defaultValue": "aaa"
+		},
+		"SapTable1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"SapTable1_properties_typeProperties_systemNumber": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Sftp1_properties_typeProperties_hostKeyFingerprint": {
+			"type": "string",
+			"defaultValue": "ssh-rsa 3072 8c:bd:37:22:f2:c9:fa:4a:4c:cf:77:f8:14:34:e3:83"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "administrator"
+		},
+		"Sftp2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"Sftp2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "ftp_user"
+		},
+		"SharePointOnlineList1_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4d0976c7-9efc-4b69-b2bf-e5dbc1d38a13"
+		},
+		"SharePointOnlineList2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4d0976c7-9efc-4b69-b2bf-e5dbc1d38a13"
+		},
+		"SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "bcb3ef6d-233f-4a5f-a65c-736adf68a47e"
+		},
+		"SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "b129a7ab-f323-4f8d-83ef-102d320f3267"
+		},
+		"linkedService_for _staging_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://taizawa4staging.blob.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -37,514 +169,416 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyPipeline_lsz')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy_lsz",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "input//"
-							},
-							{
-								"name": "Destination",
-								"value": "/"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": false,
-									"wildcardFileName": "Test.csv",
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings",
-									"skipLineCount": 1
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureFileStorageWriteSettings"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".txt"
-								}
-							},
-							"enableStaging": false,
-							"validateDataConsistency": false
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceDataset_lsz",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DestinationDataset_lsz",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Dataflow_Dataverse')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Data flow1",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "1.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "Dataverse",
-								"type": "DataFlowReference",
-								"parameters": {
-									"test": "{顧客}"
-								},
-								"datasetParameters": {
-									"source1": {},
-									"sink1": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ExcelToExcel')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "ExcelToExcel",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "BinarySource",
-								"storeSettings": {
-									"type": "FileServerReadSettings",
-									"recursive": true,
-									"wildcardFileName": "*"
-								},
-								"formatSettings": {
-									"type": "BinaryReadSettings"
-								}
-							},
-							"sink": {
-								"type": "BinarySink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "Binary1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "ADLSGen2Binary",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:44:25Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SuspendTest2')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Execute Pipeline1",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "SuspendTest01",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": false,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "Execute Pipeline2",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "Execute Pipeline1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "7z_Copy",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": false,
-							"parameters": {}
-						}
-					},
-					{
-						"name": "Wait1",
-						"type": "Wait",
-						"dependsOn": [
-							{
-								"activity": "Execute Pipeline2",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"waitTimeInSeconds": 120
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-27T07:15:05Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/regExtractTest')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Data flow1",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "1.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "dataflow1",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"inputCsv": {},
-									"sink1": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:44:25Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Schdule_TriggerTest003')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/HttpServer3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "TriggerTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('Schdule_TriggerTest003_properties_TriggerTest_parameters_p1')]",
-							"p2": "[parameters('Schdule_TriggerTest003_properties_TriggerTest_parameters_p2')]",
-							"p3": "[parameters('Schdule_TriggerTest003_properties_TriggerTest_parameters_p3')]"
-						}
-					},
-					{
-						"pipelineReference": {
-							"referenceName": "pipeline1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "HttpServer",
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Month",
-						"interval": 1,
-						"startTime": "2022-07-15T04:02:00Z",
-						"timeZone": "UTC",
-						"schedule": {
-							"minutes": [
-								40
-							],
-							"hours": [
-								10
-							],
-							"monthDays": [
-								-31,
-								-30,
-								-29,
-								-27,
-								-26,
-								-25,
-								-24,
-								-23,
-								-22,
-								-21,
-								-20,
-								-19,
-								-18,
-								-17,
-								-16,
-								-15,
-								-14,
-								-13,
-								-12,
-								-11,
-								-10,
-								-9,
-								-8,
-								-7,
-								-6,
-								-5,
-								-4,
-								-3,
-								-2,
-								1,
-								2,
-								3,
-								4
-							]
-						}
-					}
+					"url": "[parameters('HttpServer3_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": false,
+					"authenticationType": "Anonymous"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/TriggerA')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/HttpServer_2301180060001129')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "BlobからCSVを取得",
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipeline": {
-					"pipelineReference": {
-						"referenceName": "pipeline1",
-						"type": "PipelineReference"
-					},
-					"parameters": {}
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('HttpServer_2301180060001129_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": false,
+					"authenticationType": "Anonymous"
 				},
-				"type": "TumblingWindowTrigger",
-				"typeProperties": {
-					"frequency": "Hour",
-					"interval": 168,
-					"startTime": "2022-07-23T15:00:00Z",
-					"delay": "00:00:00",
-					"maxConcurrency": 50,
-					"retryPolicy": {
-						"intervalInSeconds": 30
-					},
-					"dependsOn": []
+				"connectVia": {
+					"referenceName": "AzureintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger3')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
+			"name": "[concat(parameters('factoryName'), '/MySqlOnVM')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "VM (TaizawaTest01) 上のMySQL",
+				"annotations": [],
+				"type": "MySql",
+				"typeProperties": {
+					"connectionString": "[parameters('MySqlOnVM_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa3",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PostgreSql1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "RenameTest",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"p1": "[parameters('trigger3_properties_RenameTest_parameters_p1')]",
-							"p2": "[parameters('trigger3_properties_RenameTest_parameters_p2')]"
-						}
-					}
-				],
-				"type": "BlobEventsTrigger",
+				"type": "PostgreSql",
 				"typeProperties": {
-					"blobPathBeginsWith": "/renametestinput/blobs/",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('trigger3_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
+					"connectionString": "[parameters('PostgreSql1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger4')]",
+			"name": "[concat(parameters('factoryName'), '/Rest_2303060060000184')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "https://disclosure.edinet-fsa.go.jp/api/v1/documents.json?date=2019-04-01&type=2\nから取得",
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('Rest_2303060060000184_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				},
+				"connectVia": {
+					"referenceName": "AzureintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Salesforce1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Salesforce",
+				"typeProperties": {
+					"environmentUrl": "[parameters('Salesforce1_properties_typeProperties_environmentUrl')]",
+					"username": "[parameters('Salesforce1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce1_password')]"
+					},
+					"securityToken": {
+						"type": "SecureString",
+						"value": "[parameters('Salesforce1_securityToken')]"
+					},
+					"apiVersion": "54.0",
+					"extendedProperties": "ProxyHost=localhost;ProxyPort=3128;CertsPath=C:\\temp\\cafile\\Sf_dev202102.cer"
+				},
+				"connectVia": {
+					"referenceName": "AzureintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SalesforceServiceCloud1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"parameters": {
+					"aaa": {
+						"type": "string",
+						"defaultValue": "bbb"
+					}
+				},
+				"annotations": [],
+				"type": "SalesforceServiceCloud",
+				"typeProperties": {
+					"environmentUrl": "[parameters('SalesforceServiceCloud1_properties_typeProperties_environmentUrl')]",
+					"username": "[parameters('SalesforceServiceCloud1_properties_typeProperties_username')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud1_password')]"
+					},
+					"securityToken": {
+						"type": "SecureString",
+						"value": "[parameters('SalesforceServiceCloud1_securityToken')]"
+					},
+					"apiVersion": "52.0"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SapOdp1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SapOdp",
+				"typeProperties": {
+					"clientId": "[parameters('SapOdp1_properties_typeProperties_clientId')]",
+					"language": "aaa",
+					"sncMode": false,
+					"userName": "[parameters('SapOdp1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SapOdp1_password')]"
+					},
+					"server": "[parameters('SapOdp1_properties_typeProperties_server')]",
+					"systemNumber": "[parameters('SapOdp1_properties_typeProperties_systemNumber')]"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SapTable1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "てすと",
+				"annotations": [],
+				"type": "SapTable",
+				"typeProperties": {
+					"clientId": "[parameters('SapTable1_properties_typeProperties_clientId')]",
+					"sncMode": false,
+					"userName": "[parameters('SapTable1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('SapTable1_password')]"
+					},
+					"server": "[parameters('SapTable1_properties_typeProperties_server')]",
+					"systemNumber": "[parameters('SapTable1_properties_typeProperties_systemNumber')]"
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sftp1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Sftp1_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": false,
+					"hostKeyFingerprint": "[parameters('Sftp1_properties_typeProperties_hostKeyFingerprint')]",
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp1_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa1",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sftp2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('Sftp2_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "Basic",
+					"userName": "[parameters('Sftp2_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Sftp2_password')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SharePointOnlineList1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SharePointOnlineList",
+				"typeProperties": {
+					"siteUrl": "https://jpdsd2.sharepoint.com/sites/SiteTest20230301",
+					"tenantId": "a0a58ec7-09e8-41f9-ae5a-0d67d1ccabc5",
+					"servicePrincipalId": "[parameters('SharePointOnlineList1_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "[parameters('SharePointOnlineList1_servicePrincipalKey')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SharePointOnlineList2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SharePointOnlineList",
+				"typeProperties": {
+					"siteUrl": "https://jpdsd2.sharepoint.com/sites/SiteTest20230301",
+					"tenantId": "a0a58ec7-09e8-41f9-ae5a-0d67d1ccabc5",
+					"servicePrincipalId": "[parameters('SharePointOnlineList2_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "AzureKeyVault1",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "SharePoint-jpdsd2"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SharePointOnlineList_admin2')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SharePointOnlineList",
+				"typeProperties": {
+					"siteUrl": "https://m365x78964420.sharepoint.com/sites/Test/",
+					"tenantId": "258711a2-7ca6-44f7-b8c8-2e5fb1833f7c",
+					"servicePrincipalId": "[parameters('SharePointOnlineList_admin2_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "[parameters('SharePointOnlineList_admin2_servicePrincipalKey')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SharePointOnlineList_owner02')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SharePointOnlineList",
+				"typeProperties": {
+					"siteUrl": "https://m365x78964420.sharepoint.com/sites/Test/",
+					"tenantId": "258711a2-7ca6-44f7-b8c8-2e5fb1833f7c",
+					"servicePrincipalId": "[parameters('SharePointOnlineList_owner02_properties_typeProperties_servicePrincipalId')]",
+					"servicePrincipalKey": {
+						"type": "SecureString",
+						"value": "[parameters('SharePointOnlineList_owner02_servicePrincipalKey')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "SHIR-taizawa2",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Snowflake",
+				"typeProperties": {
+					"authenticationType": "Basic",
+					"connectionString": "[parameters('Snowflake1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AzureintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/linkedService_for _staging')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"serviceEndpoint": "[parameters('linkedService_for _staging_properties_typeProperties_serviceEndpoint')]",
+					"accountKind": "StorageV2"
+				},
+				"connectVia": {
+					"referenceName": "AzureintegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/0805Test01_1')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "2206030060000373_CSV",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 15,
-						"startTime": "2022-06-29T06:30:00Z",
-						"endTime": "2022-06-30T06:50:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/trigger5')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
 				"pipeline": {
 					"pipelineReference": {
-						"referenceName": "7z_Copy",
+						"referenceName": "pipeline4",
 						"type": "PipelineReference"
 					},
 					"parameters": {}
 				},
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
-					"frequency": "Hour",
-					"interval": 24,
-					"startTime": "2022-07-25T04:45:00Z",
-					"endTime": "2022-07-28T00:35:00Z",
+					"frequency": "Minute",
+					"interval": 15,
+					"startTime": "2022-08-05T02:16:00Z",
 					"delay": "00:00:00",
-					"maxConcurrency": 50,
+					"maxConcurrency": 1,
 					"retryPolicy": {
 						"intervalInSeconds": 30
 					},
@@ -554,83 +588,67 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/TriggerB')]",
+			"name": "[concat(parameters('factoryName'), '/0805Test01_2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipeline": {
 					"pipelineReference": {
-						"referenceName": "pipeline1",
+						"referenceName": "pipeline4",
 						"type": "PipelineReference"
 					},
 					"parameters": {}
 				},
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
-					"frequency": "Hour",
-					"interval": 168,
-					"startTime": "2022-07-23T15:00:00Z",
+					"frequency": "Minute",
+					"interval": 15,
+					"startTime": "2022-08-05T02:18:00Z",
 					"delay": "00:00:00",
-					"maxConcurrency": 50,
+					"maxConcurrency": 2,
 					"retryPolicy": {
 						"intervalInSeconds": 30
 					},
-					"dependsOn": [
-						{
-							"type": "TumblingWindowTriggerDependencyReference",
-							"referenceTrigger": {
-								"referenceName": "TriggerA",
-								"type": "TriggerReference"
-							}
-						}
-					]
+					"dependsOn": []
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/triggers/TriggerA')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger6')]",
+			"name": "[concat(parameters('factoryName'), '/0825Test_01')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipeline": {
 					"pipelineReference": {
-						"referenceName": "7z_Copy",
+						"referenceName": "pipeline4",
 						"type": "PipelineReference"
 					},
 					"parameters": {}
 				},
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
-					"frequency": "Hour",
-					"interval": 24,
-					"startTime": "2022-07-25T04:45:00Z",
-					"endTime": "2022-07-28T00:35:00Z",
+					"frequency": "Minute",
+					"interval": 15,
+					"startTime": "2022-08-25T07:30:00Z",
 					"delay": "00:00:00",
-					"maxConcurrency": 50,
+					"maxConcurrency": 1,
 					"retryPolicy": {
 						"intervalInSeconds": 30
 					},
 					"dependsOn": [
 						{
-							"type": "TumblingWindowTriggerDependencyReference",
-							"referenceTrigger": {
-								"referenceName": "trigger5",
-								"type": "TriggerReference"
-							}
+							"type": "SelfDependencyTumblingWindowTriggerReference",
+							"offset": "-0.15:00:00"
 						}
 					]
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/triggers/trigger5')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

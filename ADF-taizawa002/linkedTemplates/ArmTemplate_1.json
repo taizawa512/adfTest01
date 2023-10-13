@@ -4,44 +4,64 @@
 	"parameters": {
 		"factoryName": {
 			"type": "string",
-			"metadata": "Data Factory name",
+			"metadata": "データ ファクトリ名",
 			"defaultValue": "ADF-taizawa002"
+		},
+		"AzureDatabricks_LinkedService_001_accessToken": {
+			"type": "secureString",
+			"metadata": "'AzureDatabricks_LinkedService_001' の 'accessToken' のセキュリティで保護された文字列"
 		},
 		"AzurePostgreSql1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzurePostgreSql1'"
-		},
-		"AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+			"metadata": "'AzurePostgreSql1' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+			"metadata": "'AzureSynapseAnalytics1' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"AzureSynapseAnalytics2_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics2'"
+			"metadata": "'AzureSynapseAnalytics2' の 'connectionString' のセキュリティで保護された文字列"
+		},
+		"AzureSynapseAnalytics4_connectionString": {
+			"type": "secureString",
+			"metadata": "'AzureSynapseAnalytics4' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"CosmosDb1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'CosmosDb1'"
+			"metadata": "'CosmosDb1' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"CosmosDbMongoDbApi1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'CosmosDbMongoDbApi1'"
+			"metadata": "'CosmosDbMongoDbApi1' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"Dynamics365_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Dynamics365'"
+			"metadata": "'Dynamics365' の 'password' のセキュリティで保護された文字列"
 		},
 		"incLoadTaizawa001_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'incLoadTaizawa001'"
+			"metadata": "'incLoadTaizawa001' の 'connectionString' のセキュリティで保護された文字列"
 		},
 		"test_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'test'"
+			"metadata": "'test' の 'connectionString' のセキュリティで保護された文字列"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://TaizawaTestKeyVault01.vault.azure.net/"
+		},
+		"AzureMLService1_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "d050af2c-cbd5-40e7-a95d-c6119e9cf256"
+		},
+		"AzureMLService1_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "RG-taizawa001"
+		},
+		"AzureMLService1_properties_typeProperties_mlWorkspaceName": {
+			"type": "string",
+			"defaultValue": "taizawa-AML"
 		},
 		"CosmosDbMongoDbApi1_properties_typeProperties_database": {
 			"type": "string",
@@ -61,6 +81,58 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks_LinkedService_001')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Databricksのテスト",
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-314905698721317.17.azuredatabricks.net",
+					"accessToken": {
+						"type": "SecureString",
+						"value": "[parameters('AzureDatabricks_LinkedService_001_accessToken')]"
+					},
+					"newClusterNodeType": "Standard_DS3_v2",
+					"newClusterNumOfWorker": "2",
+					"newClusterVersion": "10.3.x-scala2.12",
+					"clusterOption": "Fixed",
+					"newClusterInitScripts": []
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureMLService1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureMLService",
+				"typeProperties": {
+					"subscriptionId": "[parameters('AzureMLService1_properties_typeProperties_subscriptionId')]",
+					"resourceGroupName": "[parameters('AzureMLService1_properties_typeProperties_resourceGroupName')]",
+					"mlWorkspaceName": "[parameters('AzureMLService1_properties_typeProperties_mlWorkspaceName')]",
+					"authentication": "MSI"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzurePostgreSql1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -69,19 +141,6 @@
 				"type": "AzurePostgreSql",
 				"typeProperties": {
 					"connectionString": "[parameters('AzurePostgreSql1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -108,6 +167,19 @@
 				"type": "AzureSqlDW",
 				"typeProperties": {
 					"connectionString": "[parameters('AzureSynapseAnalytics2_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalytics4')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSynapseAnalytics4_connectionString')]"
 				}
 			},
 			"dependsOn": []
@@ -227,6 +299,25 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AutoResolveIntegrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 0
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureintegrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -287,949 +378,12 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/default')]",
-			"type": "Microsoft.DataFactory/factories/managedVirtualNetworks",
-			"apiVersion": "2018-06-01",
-			"properties": {},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AutomationWebhook')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/SHIR-taizawa3')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
-					{
-						"name": "ExecuteWebhook",
-						"type": "WebActivity",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": "https://cd08f1ae-eaa6-4202-991f-5a63f633838a.webhook.jpe.azure-automation.net/webhooks?token=YFcERaCZ6urZCjLJ4xvxKK7KiXFgCyucXgCyqCQhek4%3d",
-							"connectVia": {
-								"referenceName": "SHIR-taizawa2",
-								"type": "IntegrationRuntimeReference"
-							},
-							"method": "POST",
-							"headers": {
-								"Content-Type": "application/json"
-							},
-							"body": {},
-							"authentication": {
-								"type": "MSI",
-								"resource": "https://management.azure.com/"
-							}
-						}
-					},
-					{
-						"name": "Wait1",
-						"type": "Wait",
-						"dependsOn": [
-							{
-								"activity": "ExecuteWebhook",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"waitTimeInSeconds": 30
-						}
-					},
-					{
-						"name": "GetJobStatus",
-						"type": "WebActivity",
-						"dependsOn": [
-							{
-								"activity": "Wait1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": {
-								"value": "@concat('https://management.azure.com/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Automation/automationAccounts/AutomationTaizawaTest/jobs/',activity('ExecuteWebhook').output.JobIds[0] ,'?api-version=2019-06-01')",
-								"type": "Expression"
-							},
-							"connectVia": {
-								"referenceName": "SHIR-taizawa2",
-								"type": "IntegrationRuntimeReference"
-							},
-							"method": "GET",
-							"headers": {},
-							"authentication": {
-								"type": "MSI",
-								"resource": "https://management.azure.com/"
-							}
-						}
-					},
-					{
-						"name": "If Condition1",
-						"type": "IfCondition",
-						"dependsOn": [
-							{
-								"activity": "GetJobStatus",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"expression": {
-								"value": "@equals(activity('GetJobStatus').output.properties.status, 'Completed')",
-								"type": "Expression"
-							},
-							"ifFalseActivities": [
-								{
-									"name": "Fail1",
-									"type": "Fail",
-									"dependsOn": [],
-									"userProperties": [],
-									"typeProperties": {
-										"message": "error",
-										"errorCode": "error"
-									}
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/SHIR-taizawa2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/databricksTest001')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Notebook1",
-						"type": "DatabricksNotebook",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"notebookPath": "/adftutorial/mynotebook",
-							"baseParameters": {
-								"input": {
-									"value": "@pipeline().parameters.name",
-									"type": "Expression"
-								}
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureDatabricks_LinkedService_001",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"parameters": {
-					"name": {
-						"type": "string"
-					}
-				},
-				"folder": {
-					"name": "ADFTest"
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-26T05:43:15Z"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/2206030060000373_in')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "CRM_Contact_20220325.csv",
-						"container": "input"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "Id",
-						"type": "String"
-					},
-					{
-						"name": "IsDeleted",
-						"type": "String"
-					},
-					{
-						"name": "MasterRecordId",
-						"type": "String"
-					},
-					{
-						"name": "AccountId",
-						"type": "String"
-					},
-					{
-						"name": "LastName",
-						"type": "String"
-					},
-					{
-						"name": "FirstName",
-						"type": "String"
-					},
-					{
-						"name": "Salutation",
-						"type": "String"
-					},
-					{
-						"name": "Name",
-						"type": "String"
-					},
-					{
-						"name": "OtherStreet",
-						"type": "String"
-					},
-					{
-						"name": "OtherCity",
-						"type": "String"
-					},
-					{
-						"name": "OtherState",
-						"type": "String"
-					},
-					{
-						"name": "OtherPostalCode",
-						"type": "String"
-					},
-					{
-						"name": "OtherCountry",
-						"type": "String"
-					},
-					{
-						"name": "OtherLatitude",
-						"type": "String"
-					},
-					{
-						"name": "OtherLongitude",
-						"type": "String"
-					},
-					{
-						"name": "OtherGeocodeAccuracy",
-						"type": "String"
-					},
-					{
-						"name": "MailingStreet",
-						"type": "String"
-					},
-					{
-						"name": "MailingCity",
-						"type": "String"
-					},
-					{
-						"name": "MailingState",
-						"type": "String"
-					},
-					{
-						"name": "MailingPostalCode",
-						"type": "String"
-					},
-					{
-						"name": "MailingCountry",
-						"type": "String"
-					},
-					{
-						"name": "MailingLatitude",
-						"type": "String"
-					},
-					{
-						"name": "MailingLongitude",
-						"type": "String"
-					},
-					{
-						"name": "MailingGeocodeAccuracy",
-						"type": "String"
-					},
-					{
-						"name": "Phone",
-						"type": "String"
-					},
-					{
-						"name": "Fax",
-						"type": "String"
-					},
-					{
-						"name": "MobilePhone",
-						"type": "String"
-					},
-					{
-						"name": "HomePhone",
-						"type": "String"
-					},
-					{
-						"name": "OtherPhone",
-						"type": "String"
-					},
-					{
-						"name": "AssistantPhone",
-						"type": "String"
-					},
-					{
-						"name": "ReportsToId",
-						"type": "String"
-					},
-					{
-						"name": "Email",
-						"type": "String"
-					},
-					{
-						"name": "Title",
-						"type": "String"
-					},
-					{
-						"name": "Department",
-						"type": "String"
-					},
-					{
-						"name": "AssistantName",
-						"type": "String"
-					},
-					{
-						"name": "LeadSource",
-						"type": "String"
-					},
-					{
-						"name": "Birthdate",
-						"type": "String"
-					},
-					{
-						"name": "Description",
-						"type": "String"
-					},
-					{
-						"name": "CurrencyIsoCode",
-						"type": "String"
-					},
-					{
-						"name": "OwnerId",
-						"type": "String"
-					},
-					{
-						"name": "HasOptedOutOfEmail",
-						"type": "String"
-					},
-					{
-						"name": "HasOptedOutOfFax",
-						"type": "String"
-					},
-					{
-						"name": "DoNotCall",
-						"type": "String"
-					},
-					{
-						"name": "CreatedDate",
-						"type": "String"
-					},
-					{
-						"name": "CreatedById",
-						"type": "String"
-					},
-					{
-						"name": "LastModifiedDate",
-						"type": "String"
-					},
-					{
-						"name": "LastModifiedById",
-						"type": "String"
-					},
-					{
-						"name": "SystemModstamp",
-						"type": "String"
-					},
-					{
-						"name": "LastActivityDate",
-						"type": "String"
-					},
-					{
-						"name": "LastCURequestDate",
-						"type": "String"
-					},
-					{
-						"name": "LastCUUpdateDate",
-						"type": "String"
-					},
-					{
-						"name": "LastViewedDate",
-						"type": "String"
-					},
-					{
-						"name": "LastReferencedDate",
-						"type": "String"
-					},
-					{
-						"name": "EmailBouncedReason",
-						"type": "String"
-					},
-					{
-						"name": "EmailBouncedDate",
-						"type": "String"
-					},
-					{
-						"name": "IsEmailBounced",
-						"type": "String"
-					},
-					{
-						"name": "PhotoUrl",
-						"type": "String"
-					},
-					{
-						"name": "Jigsaw",
-						"type": "String"
-					},
-					{
-						"name": "JigsawContactId",
-						"type": "String"
-					},
-					{
-						"name": "IndividualId",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_PersonId__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_SOC__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Sansan_CompanyId__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Sansan_CompanyInfo__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Sansan_PersonId__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Sansan_PersonInfo__c",
-						"type": "String"
-					},
-					{
-						"name": "MyDepartmentFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "ABC_Evaluation__c",
-						"type": "String"
-					},
-					{
-						"name": "ACCOUNT_NAME__c",
-						"type": "String"
-					},
-					{
-						"name": "AREA__c",
-						"type": "String"
-					},
-					{
-						"name": "Address__c",
-						"type": "String"
-					},
-					{
-						"name": "Building__c",
-						"type": "String"
-					},
-					{
-						"name": "BusinessLine__c",
-						"type": "String"
-					},
-					{
-						"name": "ChangeDate__c",
-						"type": "String"
-					},
-					{
-						"name": "City__c",
-						"type": "String"
-					},
-					{
-						"name": "Comment__c",
-						"type": "String"
-					},
-					{
-						"name": "DeletedFlg__c",
-						"type": "String"
-					},
-					{
-						"name": "MyDivisionFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "FirstName_Kana__c",
-						"type": "String"
-					},
-					{
-						"name": "HasOptedOutOfEmail__c",
-						"type": "String"
-					},
-					{
-						"name": "MyOperationsDepartmentFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "LastName_Kana__c",
-						"type": "String"
-					},
-					{
-						"name": "MailMagazineFlg__c",
-						"type": "String"
-					},
-					{
-						"name": "MailingList__c",
-						"type": "String"
-					},
-					{
-						"name": "MobilePhone__c",
-						"type": "String"
-					},
-					{
-						"name": "ON_Evaluation__c",
-						"type": "String"
-					},
-					{
-						"name": "OldSystemSeqNo__c",
-						"type": "String"
-					},
-					{
-						"name": "PRG_Evaluation__c",
-						"type": "String"
-					},
-					{
-						"name": "PostalCode__c",
-						"type": "String"
-					},
-					{
-						"name": "Prefectures__c",
-						"type": "String"
-					},
-					{
-						"name": "RoleLevel__c",
-						"type": "String"
-					},
-					{
-						"name": "SeminarFlg__c",
-						"type": "String"
-					},
-					{
-						"name": "saveFlg__c",
-						"type": "String"
-					},
-					{
-						"name": "ABC_Evaluation_Remark__c",
-						"type": "String"
-					},
-					{
-						"name": "ABC__c",
-						"type": "String"
-					},
-					{
-						"name": "ON__c",
-						"type": "String"
-					},
-					{
-						"name": "PRG__c",
-						"type": "String"
-					},
-					{
-						"name": "MySectionFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__Needs_Score_Synced__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__Pardot_Last_Scored_At__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__campaign__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__comments__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__conversion_date__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__conversion_object_name__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__conversion_object_type__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__created_date__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__first_activity__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__first_search_term__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__first_search_type__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__first_touch_url__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__grade__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__last_activity__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__notes__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__pardot_hard_bounced__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__score__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__url__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__utm_campaign__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__utm_content__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__utm_medium__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__utm_source__c",
-						"type": "String"
-					},
-					{
-						"name": "pi__utm_term__c",
-						"type": "String"
-					},
-					{
-						"name": "DataSource__c",
-						"type": "String"
-					},
-					{
-						"name": "EventDate__c",
-						"type": "String"
-					},
-					{
-						"name": "InboundInformation1__c",
-						"type": "String"
-					},
-					{
-						"name": "InboundInformation2__c",
-						"type": "String"
-					},
-					{
-						"name": "InboundInformation3__c",
-						"type": "String"
-					},
-					{
-						"name": "InboundOccurrenceDate__c",
-						"type": "String"
-					},
-					{
-						"name": "JoinOrNotJoin__c",
-						"type": "String"
-					},
-					{
-						"name": "LeadOccurrenceDate__c",
-						"type": "String"
-					},
-					{
-						"name": "LeadTypeName__c",
-						"type": "String"
-					},
-					{
-						"name": "MailDeliveryPermissionFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "MailDeliveryPermissionGetDate__c",
-						"type": "String"
-					},
-					{
-						"name": "MailDeliveryPermissionGetSource__c",
-						"type": "String"
-					},
-					{
-						"name": "SeminarID__c",
-						"type": "String"
-					},
-					{
-						"name": "SeminorName__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_AutomaticKey__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_LocationTransfeProcessingNum__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_LocationTransferErrMsg__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_LocationTransferFlg__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_LocationTransferNextProcessingDate__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_PersonId_FK__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_SLC_Difference__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_SLC__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__CI_SOC_FK__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__ConversionTargetFlg__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Sansan_CompanyId_FK__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Sansan_PersonId_FK__c",
-						"type": "String"
-					},
-					{
-						"name": "Sansan_CI__Tags__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_address_city__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_address_countryCode__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_address_postalCode__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_address_state__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_address_street__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_department__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_email__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_fax__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_firstName__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_lastName__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_mobilePhone__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_organizationName__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_phone__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_person_position__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_sansan_organization_keywords__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_sansan_person_occupations__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_sansan_person_personId__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_sansan_person_positionRank__c",
-						"type": "String"
-					},
-					{
-						"name": "sci_sansan_person_tags__c",
-						"type": "String"
-					},
-					{
-						"name": "ExcludedFromSendingMailCheckStatus__c",
-						"type": "String"
-					},
-					{
-						"name": "ExcludedFromSendingMailCheck__c",
-						"type": "String"
-					},
-					{
-						"name": "InvalidOwnerFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "KyoikuPersonFlag__c",
-						"type": "String"
-					},
-					{
-						"name": "CompanyName__c",
-						"type": "String"
-					},
-					{
-						"name": "Remarks__c",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/2206030060000373_out')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"container": "output2"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "ID",
-						"type": "String"
-					},
-					{
-						"name": "NAME",
-						"type": "String"
-					},
-					{
-						"name": "CONTENT",
-						"type": "String"
-					}
-				]
+				"type": "SelfHosted",
+				"typeProperties": {}
 			},
 			"dependsOn": []
 		}

@@ -1,0 +1,705 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "データ ファクトリ名",
+			"defaultValue": "ADF-taizawa002"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/TriggerA')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipeline": {
+					"pipelineReference": {
+						"referenceName": "pipeline1",
+						"type": "PipelineReference"
+					},
+					"parameters": {}
+				},
+				"type": "TumblingWindowTrigger",
+				"typeProperties": {
+					"frequency": "Hour",
+					"interval": 168,
+					"startTime": "2022-07-23T15:00:00Z",
+					"delay": "00:00:00",
+					"maxConcurrency": 50,
+					"retryPolicy": {
+						"intervalInSeconds": 30
+					},
+					"dependsOn": []
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger4')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "2206030060000373_CSV",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2022-06-29T06:30:00Z",
+						"endTime": "2022-06-30T06:50:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger5')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipeline": {
+					"pipelineReference": {
+						"referenceName": "7z_Copy",
+						"type": "PipelineReference"
+					},
+					"parameters": {}
+				},
+				"type": "TumblingWindowTrigger",
+				"typeProperties": {
+					"frequency": "Hour",
+					"interval": 24,
+					"startTime": "2022-07-25T04:45:00Z",
+					"endTime": "2022-07-28T00:35:00Z",
+					"delay": "00:00:00",
+					"maxConcurrency": 50,
+					"retryPolicy": {
+						"intervalInSeconds": 30
+					},
+					"dependsOn": []
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/2210270060001002_DF')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "2210270060001002_in",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "2210270060001002_out",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"scriptLines": [
+						"source(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> source1",
+						"source1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     partitionFileNames:['Troubleinfo_h2s.csv'],",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> sink1"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Storage_To_Synapse')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Synapseでテーブル再作成を試す",
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "2206030060000373_in",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "AzureSynapseAnalyticsTable1",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [],
+					"scriptLines": [
+						"source(output(",
+						"          Id as string,",
+						"          IsDeleted as string,",
+						"          MasterRecordId as string,",
+						"          AccountId as string,",
+						"          LastName as string,",
+						"          FirstName as string,",
+						"          Salutation as string,",
+						"          Name as string,",
+						"          OtherStreet as string,",
+						"          OtherCity as string,",
+						"          OtherState as string,",
+						"          OtherPostalCode as string,",
+						"          OtherCountry as string,",
+						"          OtherLatitude as string,",
+						"          OtherLongitude as string,",
+						"          OtherGeocodeAccuracy as string,",
+						"          MailingStreet as string,",
+						"          MailingCity as string,",
+						"          MailingState as string,",
+						"          MailingPostalCode as string,",
+						"          MailingCountry as string,",
+						"          MailingLatitude as string,",
+						"          MailingLongitude as string,",
+						"          MailingGeocodeAccuracy as string,",
+						"          Phone as string,",
+						"          Fax as string,",
+						"          MobilePhone as string,",
+						"          HomePhone as string,",
+						"          OtherPhone as string,",
+						"          AssistantPhone as string,",
+						"          ReportsToId as string,",
+						"          Email as string,",
+						"          Title as string,",
+						"          Department as string,",
+						"          AssistantName as string,",
+						"          LeadSource as string,",
+						"          Birthdate as string,",
+						"          Description as string,",
+						"          CurrencyIsoCode as string,",
+						"          OwnerId as string,",
+						"          HasOptedOutOfEmail as string,",
+						"          HasOptedOutOfFax as string,",
+						"          DoNotCall as string,",
+						"          CreatedDate as string,",
+						"          CreatedById as string,",
+						"          LastModifiedDate as string,",
+						"          LastModifiedById as string,",
+						"          SystemModstamp as string,",
+						"          LastActivityDate as string,",
+						"          LastCURequestDate as string,",
+						"          LastCUUpdateDate as string,",
+						"          LastViewedDate as string,",
+						"          LastReferencedDate as string,",
+						"          EmailBouncedReason as string,",
+						"          EmailBouncedDate as string,",
+						"          IsEmailBounced as string,",
+						"          PhotoUrl as string,",
+						"          Jigsaw as string,",
+						"          JigsawContactId as string,",
+						"          IndividualId as string,",
+						"          Sansan_CI__CI_PersonId__c as string,",
+						"          Sansan_CI__CI_SOC__c as string,",
+						"          Sansan_CI__Sansan_CompanyId__c as string,",
+						"          Sansan_CI__Sansan_CompanyInfo__c as string,",
+						"          Sansan_CI__Sansan_PersonId__c as string,",
+						"          Sansan_CI__Sansan_PersonInfo__c as string,",
+						"          MyDepartmentFlag__c as string,",
+						"          ABC_Evaluation__c as string,",
+						"          ACCOUNT_NAME__c as string,",
+						"          AREA__c as string,",
+						"          Address__c as string,",
+						"          Building__c as string,",
+						"          BusinessLine__c as string,",
+						"          ChangeDate__c as string,",
+						"          City__c as string,",
+						"          Comment__c as string,",
+						"          DeletedFlg__c as string,",
+						"          MyDivisionFlag__c as string,",
+						"          FirstName_Kana__c as string,",
+						"          HasOptedOutOfEmail__c as string,",
+						"          MyOperationsDepartmentFlag__c as string,",
+						"          LastName_Kana__c as string,",
+						"          MailMagazineFlg__c as string,",
+						"          MailingList__c as string,",
+						"          MobilePhone__c as string,",
+						"          ON_Evaluation__c as string,",
+						"          OldSystemSeqNo__c as string,",
+						"          PRG_Evaluation__c as string,",
+						"          PostalCode__c as string,",
+						"          Prefectures__c as string,",
+						"          RoleLevel__c as string,",
+						"          SeminarFlg__c as string,",
+						"          saveFlg__c as string,",
+						"          ABC_Evaluation_Remark__c as string,",
+						"          ABC__c as string,",
+						"          ON__c as string,",
+						"          PRG__c as string,",
+						"          MySectionFlag__c as string,",
+						"          pi__Needs_Score_Synced__c as string,",
+						"          pi__Pardot_Last_Scored_At__c as string,",
+						"          pi__campaign__c as string,",
+						"          pi__comments__c as string,",
+						"          pi__conversion_date__c as string,",
+						"          pi__conversion_object_name__c as string,",
+						"          pi__conversion_object_type__c as string,",
+						"          pi__created_date__c as string,",
+						"          pi__first_activity__c as string,",
+						"          pi__first_search_term__c as string,",
+						"          pi__first_search_type__c as string,",
+						"          pi__first_touch_url__c as string,",
+						"          pi__grade__c as string,",
+						"          pi__last_activity__c as string,",
+						"          pi__notes__c as string,",
+						"          pi__pardot_hard_bounced__c as string,",
+						"          pi__score__c as string,",
+						"          pi__url__c as string,",
+						"          pi__utm_campaign__c as string,",
+						"          pi__utm_content__c as string,",
+						"          pi__utm_medium__c as string,",
+						"          pi__utm_source__c as string,",
+						"          pi__utm_term__c as string,",
+						"          DataSource__c as string,",
+						"          EventDate__c as string,",
+						"          InboundInformation1__c as string,",
+						"          InboundInformation2__c as string,",
+						"          InboundInformation3__c as string,",
+						"          InboundOccurrenceDate__c as string,",
+						"          JoinOrNotJoin__c as string,",
+						"          LeadOccurrenceDate__c as string,",
+						"          LeadTypeName__c as string,",
+						"          MailDeliveryPermissionFlag__c as string,",
+						"          MailDeliveryPermissionGetDate__c as string,",
+						"          MailDeliveryPermissionGetSource__c as string,",
+						"          SeminarID__c as string,",
+						"          SeminorName__c as string,",
+						"          Sansan_CI__CI_AutomaticKey__c as string,",
+						"          Sansan_CI__CI_LocationTransfeProcessingNum__c as string,",
+						"          Sansan_CI__CI_LocationTransferErrMsg__c as string,",
+						"          Sansan_CI__CI_LocationTransferFlg__c as string,",
+						"          Sansan_CI__CI_LocationTransferNextProcessingDate__c as string,",
+						"          Sansan_CI__CI_PersonId_FK__c as string,",
+						"          Sansan_CI__CI_SLC_Difference__c as string,",
+						"          Sansan_CI__CI_SLC__c as string,",
+						"          Sansan_CI__CI_SOC_FK__c as string,",
+						"          Sansan_CI__ConversionTargetFlg__c as string,",
+						"          Sansan_CI__Sansan_CompanyId_FK__c as string,",
+						"          Sansan_CI__Sansan_PersonId_FK__c as string,",
+						"          Sansan_CI__Tags__c as string,",
+						"          sci_person_address_city__c as string,",
+						"          sci_person_address_countryCode__c as string,",
+						"          sci_person_address_postalCode__c as string,",
+						"          sci_person_address_state__c as string,",
+						"          sci_person_address_street__c as string,",
+						"          sci_person_department__c as string,",
+						"          sci_person_email__c as string,",
+						"          sci_person_fax__c as string,",
+						"          sci_person_firstName__c as string,",
+						"          sci_person_lastName__c as string,",
+						"          sci_person_mobilePhone__c as string,",
+						"          sci_person_organizationName__c as string,",
+						"          sci_person_phone__c as string,",
+						"          sci_person_position__c as string,",
+						"          sci_sansan_organization_keywords__c as string,",
+						"          sci_sansan_person_occupations__c as string,",
+						"          sci_sansan_person_personId__c as string,",
+						"          sci_sansan_person_positionRank__c as string,",
+						"          sci_sansan_person_tags__c as string,",
+						"          ExcludedFromSendingMailCheckStatus__c as string,",
+						"          ExcludedFromSendingMailCheck__c as string,",
+						"          InvalidOwnerFlag__c as string,",
+						"          KyoikuPersonFlag__c as string,",
+						"          CompanyName__c as string,",
+						"          Remarks__c as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     ignoreNoFilesFound: false) ~> source1",
+						"source1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     deletable:false,",
+						"     insertable:true,",
+						"     updateable:false,",
+						"     upsertable:false,",
+						"     format: 'table',",
+						"     staged: true,",
+						"     allowCopyCommand: true,",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true,",
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow_SqlToBlob')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "MappingDataFlow",
+				"typeProperties": {
+					"sources": [
+						{
+							"dataset": {
+								"referenceName": "AzureSqlTable1",
+								"type": "DatasetReference"
+							},
+							"name": "source1"
+						}
+					],
+					"sinks": [
+						{
+							"dataset": {
+								"referenceName": "DelimitedText4",
+								"type": "DatasetReference"
+							},
+							"name": "sink1"
+						}
+					],
+					"transformations": [
+						{
+							"name": "derivedColumn1"
+						}
+					],
+					"scriptLines": [
+						"source(output(",
+						"          ID as integer,",
+						"          Name as string,",
+						"          Model as string,",
+						"          Length as integer",
+						"     ),",
+						"     allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     query: 'select * from dbo.Cars',",
+						"     format: 'query') ~> source1",
+						"source1 derive(test = add(ID,100000)) ~> derivedColumn1",
+						"derivedColumn1 sink(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     skipDuplicateMapInputs: true,",
+						"     skipDuplicateMapOutputs: true) ~> sink1"
+					]
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Blob_2210270060001002')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Data flow1",
+						"description": "o",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "2210270060001002_DF",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {
+										"Folderpass": "hoge"
+									}
+								}
+							},
+							"staging": {},
+							"integrationRuntime": {
+								"referenceName": "AzureintegrationRuntime",
+								"type": "IntegrationRuntimeReference"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-03-11T09:41:47Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/2210270060001002_DF')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dataflow_SqlToBlob')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Data flow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "dataflow_SqlToBlob",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"folder": {
+					"name": "ADFTest"
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-03-11T09:41:46Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/dataflow_SqlToBlob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline2301170060000436')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Data flow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "Storage_To_Synapse",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {}
+								}
+							},
+							"staging": {
+								"linkedService": {
+									"referenceName": "AzureBlobStorage1",
+									"type": "LinkedServiceReference"
+								},
+								"folderPath": "2301170060000436"
+							},
+							"integrationRuntime": {
+								"referenceName": "AzureintegrationRuntime",
+								"type": "IntegrationRuntimeReference"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-02-06T07:50:49Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/Storage_To_Synapse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline_2301170060000436')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Data flow1",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "Storage_To_Synapse",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {}
+								}
+							},
+							"staging": {
+								"linkedService": {
+									"referenceName": "AzureBlobStorage1",
+									"type": "LinkedServiceReference"
+								},
+								"folderPath": "2301170060000436"
+							},
+							"integrationRuntime": {
+								"referenceName": "AzureintegrationRuntime",
+								"type": "IntegrationRuntimeReference"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2023-03-11T09:41:47Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/Storage_To_Synapse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TriggerB')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipeline": {
+					"pipelineReference": {
+						"referenceName": "pipeline1",
+						"type": "PipelineReference"
+					},
+					"parameters": {}
+				},
+				"type": "TumblingWindowTrigger",
+				"typeProperties": {
+					"frequency": "Hour",
+					"interval": 168,
+					"startTime": "2022-07-23T15:00:00Z",
+					"delay": "00:00:00",
+					"maxConcurrency": 50,
+					"retryPolicy": {
+						"intervalInSeconds": 30
+					},
+					"dependsOn": [
+						{
+							"type": "TumblingWindowTriggerDependencyReference",
+							"referenceTrigger": {
+								"referenceName": "TriggerA",
+								"type": "TriggerReference"
+							}
+						}
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/triggers/TriggerA')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger6')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipeline": {
+					"pipelineReference": {
+						"referenceName": "7z_Copy",
+						"type": "PipelineReference"
+					},
+					"parameters": {}
+				},
+				"type": "TumblingWindowTrigger",
+				"typeProperties": {
+					"frequency": "Hour",
+					"interval": 24,
+					"startTime": "2022-07-25T04:45:00Z",
+					"endTime": "2022-07-28T00:35:00Z",
+					"delay": "00:00:00",
+					"maxConcurrency": 50,
+					"retryPolicy": {
+						"intervalInSeconds": 30
+					},
+					"dependsOn": [
+						{
+							"type": "TumblingWindowTriggerDependencyReference",
+							"referenceTrigger": {
+								"referenceName": "trigger5",
+								"type": "TriggerReference"
+							}
+						}
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/triggers/trigger5')]"
+			]
+		}
+	]
+}
