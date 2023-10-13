@@ -2,7 +2,7 @@
 	"name": "trigger5",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "7z_Copy",
