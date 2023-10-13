@@ -16,6 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://management.azure.com/subscriptions/d050af2c-cbd5-40e7-a95d-c6119e9cf256/resourceGroups/RG-taizawa001/providers/Microsoft.Compute/virtualMachines/TaizawaTest01/deallocate?api-version=2022-03-01",
+					"connectVia": {
+						"referenceName": "AutoResolveIntegrationRuntime",
+						"type": "IntegrationRuntimeReference"
+					},
 					"method": "POST",
 					"authentication": {
 						"type": "MSI",

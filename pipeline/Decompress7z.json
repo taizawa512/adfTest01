@@ -6,6 +6,10 @@
 				"name": "WebHookDecompress7z",
 				"type": "WebHook",
 				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://cd08f1ae-eaa6-4202-991f-5a63f633838a.webhook.jpe.azure-automation.net/webhooks?token=FGPXKa4kNLgsh0%2ffs0DjSwXjiXKmf9j4P80GoQYG%2bmw%3d",
