@@ -1,0 +1,14 @@
+{
+	"name": "AzureSqlDatabase_ManagedIdentity_SHIR",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=taizawa.database.windows.net;Initial Catalog=taizawaDatabase001"
+		},
+		"connectVia": {
+			"referenceName": "SHIR-renew",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
