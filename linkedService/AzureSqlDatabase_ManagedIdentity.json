@@ -1,0 +1,14 @@
+{
+	"name": "AzureSqlDatabase_ManagedIdentity",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=taizawa.database.windows.net;Initial Catalog=taizawaDatabase001"
+		},
+		"connectVia": {
+			"referenceName": "AzureintegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
